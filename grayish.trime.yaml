@@ -1,0 +1,1366 @@
+# Trime custom style settings
+# encoding: utf-8
+
+config_version: "1.2"
+name: 小灰灰
+author: 抱豹 <baopaau@gmail.com>
+# 黑白自適應配色方案，適配安卓10暗黑模式
+# 下滑：數字行　上滑：控制行
+
+# 不使用外部圖片
+
+# ———— 鍵盤一級佈局（主題） ————
+style:
+  # 控制／Misc
+  locale:                zh_Hant     # 預設語言區域
+  latin_locale:          en_US       # 西文語言區域
+  auto_caps:             false       # 自動句首大寫：true|false|ascii
+  proximity_correction:  true        # 按鍵糾錯
+  reset_ascii_mode:      true        # 顯示鍵盤時重置爲中文狀態
+  speech_opencc_config:  s2t.json    # 語音輸入簡繁轉換方案
+  color_scheme:          default     # 預設配色方案
+  
+  # 交互／Interaction
+  horizontal:            true        # 水平模式：值真時，左右鍵可選字，上下鍵可翻頁
+  background_dim_amount: 0.5         # 暗黑模式，暗化率
+  candidate_use_cursor:  true        # 高亮候選項
+  comment_on_top:        true        # 編碼提示在上方或右側
+  vertical_correction:   -10         # 觸控縱向修正
+  
+  # 字型／Fonts
+  hanb_font:             TH-SiuNiu-Bold.ttf   # 擴充字型
+
+  key_font:              TH-SiuNiu-Bold.ttf   # 鍵盤字型
+  latin_font:            TH-SiuNiu-Bold.ttf   # 鍵盤西文字型
+  symbol_font:           TH-SiuNiu-Bold.ttf   # 鍵盤助記字型
+
+  candidate_font:        TH-SiuNiu-Bold.ttf   # 候選項字型
+  comment_font:          TH-SiuNiu-Bold.ttf   # 候選項注釋字型
+
+  text_font:             TH-SiuNiu-Bold.ttf   # 浮窗編碼區字型
+
+  preview_font:          TH-SiuNiu-Bold.ttf   # 按鍵氣泡字型
+
+  label_font:            TH-SiuNiu-Bold.ttf   # 標籤字型？
+
+  
+  # 排版參數／Length
+  key_height:            44          # 單按鍵，高度
+  key_width:             10.0        # 單按鍵，寬度，佔螢幕寬的百分比
+  round_corner:          24          # 按鍵圓角，半徑
+  vertical_gap:          0           # 按鍵垂直縫隙，長度（6）
+  vertical_gap_CTM:   &H_GAP  6
+  vertical_gap_CTM_T: &H_GAP_T 7
+  vertical_gap_CTM_B: &H_GAP_B 2
+  horizontal_gap:        4           # 按鍵水平縫隙，長度
+
+  candidate_padding:     10          # 候選區，內邊距
+  candidate_spacing:     1.2         # 候選區，間距
+  candidate_view_height: 30          # 候選區，高度
+  comment_height:        20          # 候選區-注釋區，高度
+
+  #text_height:          22          # 浮窗編碼區文字，高度（似乎沒作用）
+  
+  preview_height:        50          # 按鍵彈出氣泡，高度
+  preview_offset:        -12         # 按鍵彈出氣泡，縱向偏移
+
+  shadow_radius:         0.0         # 全局文字陰影，半徑
+
+  # 字號／Text Size
+  key_text_size:         22          # 按鍵文字，字號
+  key_long_text_size:    14          # 按鍵文字，字號：長文本
+  symbol_text_size:      10          # 按鍵助記文字，字號
+
+  candidate_text_size:   22          # 候選區文字，字號
+  comment_text_size:     12          # 候選區注釋文字，字號
+
+  text_size:             24          # 浮窗編碼區文字，字號
+
+  preview_text_size:     42          # 按鍵氣泡，字號
+
+  label_text_size:       22          # 標籤，字號
+
+  # 懸浮窗口／Floating Window
+  layout:
+    position:     fixed           # 懸浮窗口位置：left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left、right需要>=Android5.0)
+    min_length:   50              # 候選項超過此數即可上懸浮窗
+    max_entries:  1               # 最大詞條數
+    max_length:   20              # 超過字數則換行
+    sticky_lines: 0               # 固頂行數
+    all_phrases:  false           # 所有滿足條件的詞語都顯示在窗口
+    border:       2               # 邊框寬度
+    max_width:    3300             # 最大寬度，超過則自動換行
+    max_height:   400             
+    min_width:    60              
+    min_height:   0               
+    margin_x:     9               
+    margin_y:     6               
+    line_spacing: 0               # 候選詞的行間距(px)
+    line_spacing_multiplier: 1.2  # 候選詞的行間距(倍數)
+    spacing:      2               # 與預編輯或邊緣的距離
+    round_corner: 0               # 候選區選中區圓角
+    alpha:        0xff            # 透明度(0-255)
+    elevation:    5               # 陰影(>=Android5.0)
+    background:   0xddeaebec      # 顏色或者backgrounds目錄下的圖片文件名
+    movable:      false           # 是否可移動窗口，或僅移動一次 true|false|once
+    
+  window: # 懸浮窗口佈局
+    - {start: "", move: 'ㄓ ', end: ""}
+    - {start: "", composition: "%s	", end: " ▁", letter_spacing: 0} #letter_spacing需要>=Android5.0。TODO: 不爲0時，會導致不換行的問題
+    - {start: "\n", label: "%s.", candidate: "%s", comment: " %s", end: "", sep: " "}
+  
+
+  # 注冊鍵盤／Keyboard Registration
+  keyboards:
+    - .default
+    - letter
+    - letter_NRT
+    - letter_CRB
+    - number
+    - symbols
+    - controller
+  
+
+# ———— 配色 ————
+colors:
+  1: &C_Clouds       0xfdfdfd
+  2: &C_Silver       0xeceff1
+  3: &C_Concrete     0xd3d7da
+  4: &C_Asbestos     0x9ea7aa
+  5: &C_WetAsphalt   0x808080
+  6: &C_MidnightBlue 0x646464
+
+# ———— 配色替補關係 ————
+fallback_colors:
+  candidate_text_color:         text_color
+  comment_text_color:           candidate_text_color
+  border_color:                 back_color
+  candidate_separator_color:    border_color
+  text_back_color:              back_color
+  hilited_text_color:           text_color
+  hilited_back_color:           back_color
+  hilited_candidate_text_color: hilited_text_color
+  hilited_candidate_back_color: hilited_back_color
+  hilited_comment_text_color:   comment_text_color
+  hilited_key_back_color:       hilited_candidate_back_color
+  hilited_key_text_color:       hilited_candidate_text_color
+  hilited_key_symbol_color:     hilited_comment_text_color
+  hilited_off_key_back_color:   hilited_key_back_color
+  hilited_on_key_back_color:    hilited_key_back_color
+  hilited_off_key_text_color:   hilited_key_text_color
+  hilited_on_key_text_color:    hilited_key_text_color
+  key_back_color:               back_color
+  key_border_color:             border_color
+  key_text_color:               candidate_text_color
+  key_symbol_color:             comment_text_color
+  keyboard_back_color:          border_color
+  label_color:                  candidate_text_color
+  off_key_back_color:           key_back_color
+  off_key_text_color:           key_text_color
+  on_key_back_color:            hilited_key_back_color
+  on_key_text_color:            hilited_key_text_color
+  preview_back_color:           key_back_color
+  preview_text_color:           key_text_color
+  shadow_color:                 border_color
+
+# ———— 配色方案 ————
+preset_color_schemes:
+  default:
+    name: 預設／DEFAULT
+    author: Baopaau
+
+    keyboard_back_color:          *C_Clouds        # 鍵盤背景
+    key_back_color:               0x1d93979a       # 按鍵背景
+    hilited_key_back_color:       *C_Concrete      # 按鍵背景：按下
+    off_key_back_color:           0x3893979a       # 按鍵背景：功能鍵：未激活
+    hilited_off_key_back_color:   0xb893979a       # 按鍵背景：功能鍵：未激活：按下
+    on_key_back_color:            0x9263676a       # 按鍵背景：功能鍵：已激活
+    hilited_on_key_back_color:    0x5893979a       # 按鍵背景：功能鍵：已激活：按下
+
+    key_text_color:               *C_WetAsphalt    # 按鍵文字
+    hilited_key_text_color:       *C_MidnightBlue  # 按鍵文字：按下
+    off_key_text_color:           *C_MidnightBlue  # 按鍵文字：功能鍵：未激活
+    hilited_off_key_text_color:   *C_MidnightBlue  # 按鍵文字：功能鍵：未激活：按下
+    on_key_text_color:            0xa0ffffff       # 按鍵文字：功能鍵：已激活
+    hilited_on_key_text_color:    *C_MidnightBlue  # 按鍵文字：功能鍵：已激活：按下
+    key_symbol_color:             *C_MidnightBlue  # 按鍵助記文字
+    hilited_key_symbol_color:     *C_MidnightBlue  # 按鍵助記文字：按下
+
+    back_color:                   0xffecedef       # 候選區背景，暨浮窗編碼器錯誤高亮色，後者不受暗黑模式影響，但透明度會同時影響兩者
+    hilited_candidate_back_color: *C_Concrete      # 候選區背景：選中
+    candidate_separator_color:    0xffd3d7da       # 候選區分割條
+
+    candidate_text_color:         *C_MidnightBlue  # 候選區文字
+    hilited_candidate_text_color: *C_MidnightBlue  # 候選區文字：選中
+    comment_text_color:           *C_WetAsphalt    # 候選區注釋文字
+    hilited_comment_text_color:   *C_WetAsphalt    # 候選區注釋文字：選中
+
+    text_back_color:              0x00ffffff       # 浮窗編碼區背景（可能沒用）
+    hilited_back_color:           0x00ffffff       # 浮窗編碼區背景：選中
+    
+    text_color:                   0x868686         # 浮窗編碼區文字
+    hilited_text_color:           0x424242         # 浮窗編碼區文字：選中
+
+    preview_back_color:           0x00d1d2d3       # 按鍵彈出氣泡背景
+    preview_text_color:           *C_MidnightBlue  # 按鍵彈出氣泡文字
+
+    shadow_color:         0x000000    # 全局文字陰影
+    label_color:          0x123456    # 標籤（我也不知道這是什麽）
+    
+      
+    CLB_FN: 0x3893979a  # 功能鍵，背景
+    CLT_FN: null  # 功能鍵，文字
+    CLB_SP: 0x00000000  # 空格鍵，背景
+    CLT_SP: null  # 空格鍵，文字
+    CLB_ET: 0x48a3b7ca  # 回車鍵，背景
+    CLT_ET: null  # 回車鍵，文字
+    CLB_BS: 0x3893979a  # 退格鍵，背景
+    CLT_BS: null  # 退格鍵，文字
+    CLB_H1: 0x1d93979a  # 第一行，背景
+    CLT_H1: null  # 第一行，文字
+    CLB_H2: 0x1d93979a  # 第二行，背景
+    CLT_H2: null  # 第二行，文字
+    CLB_H3: 0x1d93979a  # 第三行，背景
+    CLT_H3: null  # 第三行，文字
+    CLB_H4: null  # 第四行，背景
+    CLT_H4: null  # 第四行，文字
+    CHB_FN: null
+    CHT_FN: null
+    CHB_SP: null
+    CHT_SP: null
+    CHB_ET: null
+    CHT_ET: null
+    CHB_SF: null
+    CHT_SF: null
+    CHB_BS: null
+    CHT_BS: null
+    CHB_H1: 0x70909090
+    CHT_H1: null
+    CHB_H2: null
+    CHT_H2: null
+    CHB_H3: null
+    CHT_H3: null
+    CHB_H4: null
+    CHT_H4: null
+    CLT_NR: null
+    CLB_NR: 0x1093979a
+    CHT_NR: null
+    CHB_NR: null
+    CLT_SR: null
+    CLB_SR: 0x2093979a
+    CHT_SR: null
+    CHB_SR: null
+
+  
+# 以下不能動
+android_keys:
+  name: [VoidSymbol, SOFT_LEFT, SOFT_RIGHT, HOME, BACK, CALL, ENDCALL,
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    asterisk, numbersign, Up, Down, Left, Right, KP_Begin,
+    VOLUME_UP, VOLUME_DOWN, POWER, CAMERA, Clear,
+    a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+    comma, period, Alt_L, Alt_R, Shift_L, Shift_R, Tab, space,
+    SYM, EXPLORER, ENVELOPE, Return, BackSpace,
+    grave, minus, equal, bracketleft, bracketright, backslash, semicolon, apostrophe, slash, at,
+    NUM, HEADSETHOOK, FOCUS, plus, Menu, NOTIFICATION, Find,
+    MEDIA_PLAY_PAUSE, MEDIA_STOP, MEDIA_NEXT, MEDIA_PREVIOUS, MEDIA_REWIND, MEDIA_FAST_FORWARD, MUTE,
+    Page_Up, Page_Down, PICTSYMBOLS, Mode_switch,
+    BUTTON_A, BUTTON_B, BUTTON_C, BUTTON_X, BUTTON_Y, BUTTON_Z,
+    BUTTON_L1, BUTTON_R1, BUTTON_L2, BUTTON_R2,
+    BUTTON_THUMBL, BUTTON_THUMBR, BUTTON_START, BUTTON_SELECT, BUTTON_MODE,
+    Escape, Delete, Control_L, Control_R, Caps_Lock, Scroll_Lock, Meta_L, Meta_R,
+    function, Sys_Req, Pause, Home, End, Insert, Next,
+    MEDIA_PLAY, MEDIA_PAUSE, MEDIA_CLOSE, MEDIA_EJECT, MEDIA_RECORD,
+    F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
+    Num_Lock, KP_0, KP_1, KP_2, KP_3, KP_4, KP_5, KP_6, KP_7, KP_8, KP_9,
+    KP_Divide, KP_Multiply, KP_Subtract, KP_Add, KP_Decimal, KP_Separator, KP_Enter, KP_Equal,
+    parenleft, parenright,
+    VOLUME_MUTE, INFO, CHANNEL_UP, CHANNEL_DOWN, ZOOM_IN, ZOOM_OUT,
+    TV, WINDOW, GUIDE, DVR, BOOKMARK, CAPTIONS, SETTINGS,
+    TV_POWER, TV_INPUT, STB_POWER, STB_INPUT, AVR_POWER, AVR_INPUT,
+    PROG_RED, PROG_GREEN, PROG_YELLOW, PROG_BLUE, APP_SWITCH,
+    BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, BUTTON_7, BUTTON_8,
+    BUTTON_9, BUTTON_10, BUTTON_11, BUTTON_12, BUTTON_13, BUTTON_14, BUTTON_15, BUTTON_16,
+    LANGUAGE_SWITCH, MANNER_MODE, 3D_MODE, CONTACTS, CALENDAR, MUSIC, CALCULATOR,
+    Zenkaku_Hankaku, Eisu_toggle, Muhenkan, Henkan, Hiragana_Katakana, yen, RO, Kana_Lock,
+    ASSIST, BRIGHTNESS_DOWN, BRIGHTNESS_UP, MEDIA_AUDIO_TRACK,
+    SLEEP, WAKEUP, PAIRING, MEDIA_TOP_MENU, '11', '12', LAST_CHANNEL, TV_DATA_SERVICE, VOICE_ASSIST,
+    TV_RADIO_SERVICE, TV_TELETEXT, TV_NUMBER_ENTRY, TV_TERRESTRIAL_ANALOG, TV_TERRESTRIAL_DIGITAL,
+    TV_SATELLITE, TV_SATELLITE_BS, TV_SATELLITE_CS, TV_SATELLITE_SERVICE, TV_NETWORK, TV_ANTENNA_CABLE,
+    TV_INPUT_HDMI_1, TV_INPUT_HDMI_2, TV_INPUT_HDMI_3, TV_INPUT_HDMI_4,
+    TV_INPUT_COMPOSITE_1, TV_INPUT_COMPOSITE_2, TV_INPUT_COMPONENT_1, TV_INPUT_COMPONENT_2, TV_INPUT_VGA_1,
+    TV_AUDIO_DESCRIPTION, TV_AUDIO_DESCRIPTION_MIX_UP, TV_AUDIO_DESCRIPTION_MIX_DOWN,
+    TV_ZOOM_MODE, TV_CONTENTS_MENU, TV_MEDIA_CONTEXT_MENU, TV_TIMER_PROGRAMMING,
+    Help, NAVIGATE_PREVIOUS, NAVIGATE_NEXT, NAVIGATE_IN, NAVIGATE_OUT,
+    STEM_PRIMARY, STEM_1, STEM_2, STEM_3,
+    Pointer_UpLeft, Pointer_DownLeft, Pointer_UpRight, Pointer_DownRight,
+    MEDIA_SKIP_FORWARD, MEDIA_SKIP_BACKWARD, MEDIA_STEP_FORWARD, MEDIA_STEP_BACKWARD,
+    SOFT_SLEEP, CUT, COPY, PASTE,
+    SYSTEM_NAVIGATION_UP, SYSTEM_NAVIGATION_DOWN, SYSTEM_NAVIGATION_LEFT, SYSTEM_NAVIGATION_RIGHT,
+    ALL_APPS, REFRESH, THUMBS_UP, THUMBS_DOWN, PROFILE_SWITCH,
+    A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+    exclam, quotedbl, dollar, percent, ampersand, colon, less, greater, question, asciicircum, underscore, braceleft, bar, braceright, asciitilde]
+    
+  symbols: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!"$%&:<>?^_{|}~'
+
+  when:
+    click:       單按
+    long_click:  長按
+    swipe_left:  左滑
+    swipe_right: 右滑
+    swipe_up:    上滑
+    swipe_down:  下滑
+    combo:       並擊
+
+    composing:   輸入狀態時click的行爲
+    has_menu:    存在選單時click的行爲
+    paging:      翻頁後click的行爲
+    # send_bindings: 
+
+    ascii:       西文標籤
+
+  property:
+    label:     標籤  # 警告：直接作用於按鍵的label屬性會導致暗黑模式顯示異常
+    hint:      提示
+
+    # key_text_size:             字號
+    # symbol_text_size:          符號字號
+
+    # key_text_color:            文字顔色
+    # hilited_key_text_color:    高亮文字顔色
+    # key_symbol_color:          符號顔色
+    # hilited_key_symbol_color:  高亮符號顔色
+    # key_back_color:            按鍵顔色
+    # hilited_key_back_color:    高亮按鍵顔色
+
+    # round_corner:              按鍵圓角半徑
+
+    # x:       橫坐標  # 不可設置，會被鍵盤屬性覆蓋
+    # y:       縱坐標  # 不可設置，會被鍵盤屬性覆蓋
+    width:     寬度
+    height:    高度    # 需要整行一致
+    gap:       間隔    # 不可設置，會被鍵盤屬性覆蓋
+    # row:     行      # 不可設置，會被鍵盤屬性覆蓋
+    # colum:   列      # 不可設置，會被鍵盤屬性覆蓋
+    
+    # key_press_offset_x:  2 #按下時偏移，會叠加於symbol、text和hint，預設0
+    # key_press_offset_y:  2
+    # key_symbol_offset_x: 0
+    # key_symbol_offset_y: 0
+    # key_text_offset_x:   0
+    # key_text_offset_y:   0
+    # key_hint_offset_x:   0
+    # key_hint_offset_y:   0
+    
+    # pressed: true|false
+    # on: true|false
+    # popupCharacters: 
+    # popupResId: 
+    
+  # -- Event --
+    # code: 内部變量
+    # mask: 内部變量
+
+    preview:    預覽       # String
+    states:     狀態標籤   # List<String>
+    
+    shift_lock: Shift鎖定  #ascii_long: 英文長按中文單按鎖定, long: 長按鎖定, click: 單按鎖定
+    functional: 功能鍵     # bool，預設 true
+    repeatable: 連續按鍵   # bool，預設 false
+    # sticky:   黏合鍵     # bool，預設 false
+  action:
+    text:       文字
+   
+    command:    命令
+    option:     參數
+    select:     選擇
+    toggle:     狀態
+    commit:     上屏
+   
+    send:       按鍵
+    
+# 以上不能動
+
+# android_keys:
+#   __include: trime:/android_keys
+
+# ———— 自定義按鍵 ————
+preset_keys:
+  K_Space:            { send: space     ,repeatable: false ,functional: false }
+  K_Space_NoPreview:  { send: space     ,repeatable: false ,functional: false              ,preview: ' '}
+  K_Space_E:          { send: space     ,repeatable: false ,functional: false ,label: ' ' }
+  K_Backspace:        { send: BackSpace ,repeatable: true                     ,label: '⌫' ,preview: ' ' }
+
+  K_Shift:     { send: Shift_L ,shift_lock: long ,label: '🡅'   ,preview: '​' }
+  K_Shift_T:   { send: Shift_L ,shift_lock: long ,label: '變換' }
+  K_Enter:     { send: Return    ,label: '⮠'   ,preview: '​' }
+  K_Enter_T:   { send: Return    ,label: '回車' }
+
+  K_Tab:       { send: Tab       ,label: '⭾' }
+  K_Escape:    { send: Escape    ,label: Esc }
+  K_Hide:      { send: BACK      ,label: '﹀' ,preview: ' ' }
+  K_Hide_S:    { send: BACK      ,label: '↧' ,preview: ' ' }
+  K_Clear:     { send: Clear     ,label: 全清 }
+  K_Insert:    { send: Insert    ,label: 插入 }
+  K_Delete:    { send: Delete    ,label: 刪除 }
+
+  K_Home_T:      { send: Home      ,label: 行首 }
+  K_End_T:       { send: End       ,label: 行尾 }
+  K_PageUp_T:    { send: Page_Up   ,label: 上頁 }
+  K_PageDown_T:  { send: Page_Down ,label: 下頁 }
+  K_Home:      { send: Home      ,label: '⭰' }
+  K_End:       { send: End       ,label: '⭲' }
+  K_PageUp:    { send: Page_Up   ,label: '⭱' }
+  K_PageDown:  { send: Page_Down ,label: '⭳' }
+
+  K_Left:    { send: Left                    ,label: ' '}
+  K_Down:    { send: Down                    ,label: ' '}
+  K_Up:      { send: Up                      ,label: ' '}
+  K_Right:   { send: Right                   ,label: ' '}
+  K_Left_R:  { send: Left  ,repeatable: true ,label: '←'}
+  K_Down_R:  { send: Down  ,repeatable: true ,label: '↓'}
+  K_Up_R:    { send: Up    ,repeatable: true ,label: '↑'}
+  K_Right_R: { send: Right ,repeatable: true ,label: '→'}
+
+  K_F4:      { send: F4 ,label: 方案選單 }
+
+  K_FStop_RD: { label: '.' ,text: '.{KB_Default}' }
+  K_Comma_RD: { label: ',' ,text: ',{KB_Default}' }
+  K_QueMk_RD: { label: '?' ,text: '?{KB_Default}' } 
+  K_XclMk_RD: { label: '!' ,text: '!{KB_Default}' }
+  K_Apost_RD: { label: "'" ,text: "'{KB_Default}" } 
+  K_QotMk_RD: { label: '"' ,text: '"{KB_Default}' }
+  
+  K_Comma_E:     { label: '​' ,text: "," ,preview: ',' }  # zero-width dpace U+200B
+  K_FullStop_E:  { label: '​' ,text: "." ,preview: '.' }
+  K_Slash_E:     { label: '​' ,text: "-" ,preview: '-' }  
+  K_Underscore_E: { label: '​' ,text: "_" ,preview: '_' }
+  K_Space_Fake_Comma:     { send: space ,repeatable: false ,functional: false ,label: ',' ,preview: '​' } # zero-width space
+  K_Space_Fake_FullStop:  { send: space ,repeatable: false ,functional: false ,label: '.' ,preview: '​' }
+  K_Space_Fake_Slash:     { send: space ,repeatable: false ,functional: false ,label: '-' ,preview: '​' }
+  K_Space_Fake_Underscore: { send: space ,repeatable: false ,functional: false ,label: '_' ,preview: '​' }
+  K_Underscore_ASCII: { label: '_' ,text: '_' }
+  K_LongDash: { label: '——' ,text: '——' }
+  
+  K_Nothing: { label: ' ' }
+
+  # 組合鍵 / Hotkeys
+  HK_SelectAll: { send: Control+a                ,label: '⧈'     }
+  HK_Cut:       { send: Control+x                ,label: '⎘'     }
+  HL_CutAll:    { text: "{Control+a}{Control+x}" ,label: 全挪     }
+  HK_Copy:      { send: Control+c                ,label: '🗐'     }
+  HK_CopyAll:   { text: "{Control+a}{Control+c}" ,label: 全謄     }
+  HK_Paste:     { send: Control+v                ,label: '⎀'     }
+  HK_PasteText: { send: Control+Shift+Alt+v      ,label: 貼上文本 } #>=Android 6.0
+  HK_ShareText: { send: Control+Alt+s            ,label: 分享文本 } #>=Android 6.0
+  HK_Redo:      { send: Control+y                ,label: '↷'     } #>=Android 6.0
+  HK_Undo:      { send: Control+z                ,label: '↶'     } #>=Android 6.0
+  
+  HK_DeleteWord:      { send: Control+BackSpace    ,label: 刪節 }
+  HK_DeleteCandidate: { send: Control+Delete       ,label: 刪詞 }
+  HK_CtrlEnter:       { send: Control+Return       ,label: ' ' }
+  HK_ShiftEnter:      { send: Shift+Return         ,label: ' ' }
+  HK_CtrlShiftEnter:  { send: Control+Shift+Return ,label: ' ' }
+  
+  HK_SelectWord:  { text: '{Control+Left}{Shift+Control+Right}' ,label: '‹ɪ›' }
+
+  # 特殊功能鍵 / Function Keys
+  KB_Default:   { send: Eisu_toggle ,select: .default ,label: 返回 }
+  KB_Default_S: { send: Eisu_toggle ,select: .default ,label: KB }
+  KB_Default_E: { send: Eisu_toggle ,select: .default ,label: ' ' }
+  KB_Letter:    { send: Eisu_toggle ,select: default  ,label: 字母 ,preview: ' ' }
+  KB_Letter_S:  { send: Eisu_toggle ,select: default  ,label: ABC }
+  KB_Letter_NRT: { send: Eisu_toggle ,select: letter_NRT ,label: 字母頂數字行 ,preview: ' ' }
+  KB_Letter_CRB: { send: Eisu_toggle ,select: letter_CRB ,label: 字母底控制行 ,preview: ' ' }
+ 
+ 
+  KB_Number:    { send: Eisu_toggle ,select: number   ,label: 數字 }
+  KB_Number_S:  { send: Eisu_toggle ,select: number   ,label: "123" }
+  KB_Symbol:    { send: Eisu_toggle ,select: symbols  ,label: 符號 }
+  KB_Symbol_S:  { send: Eisu_toggle ,select: symbols  ,label: "^&*" }
+  KB_Controller:     { send: Eisu_toggle ,select: controller    ,label: "控制" }
+  KB_Controller_S:   { send: Eisu_toggle ,select: controller    ,label: "Ct" }
+
+  SWI_Keyboard:    { send: Eisu_toggle      ,select: .next      ,label: 鍵盤 }
+  SWI_Keyboard_L:  { send: Eisu_toggle      ,select: .last      ,label: 后退 }
+  SWI_Keyboard_LL: { send: Eisu_toggle      ,select: .last_lock ,label: 返回 }
+  SWI_Schema:      { send: Control+Shift+1 ,label: 下一方案 }
+  SWI_Schema_Eng:  { send: Control+Shift+0 ,label: Eng }
+  SWI_Color:       { send: PROG_RED        ,label: 配色 }
+  SWI_Candidate:   { toggle: _hide_candidate ,send: Mode_switch ,states: [有候選, 無候選] }
+  SWI_Comment:     { toggle: _hide_comment   ,send: Mode_switch ,states: [有註釋, 無註釋] }
+  SWI_Hint:        { toggle: _hide_key_hint  ,send: Mode_switch ,states: [有助記, 無助記] }
+ 
+  F_Help:     { send: Help                       ,label: 說明 }
+  F_Info:     { send: INFO                       ,label: 關於 }
+  F_Menu:     { send: Menu                       ,label: 選單 }
+  F_Menu_S:   { send: Menu                       ,label: "  " }
+  F_Menu_E:   { send: Menu                       ,label: "  " }
+  F_Menu_F_Slash: { send: Menu                   ,label: '-' } # 設置long_click，label爲'-'，以防暗黑模式閃爍
+  F_Settings: { send: SETTINGS                   ,label: 設定 }
+  F_Colors:   { send: SETTINGS ,option: "color"  ,label: 配色 }
+  F_Themes:   { send: SETTINGS ,option: "theme"  ,label: 主題 }
+  F_Schemas:  { send: SETTINGS ,option: "schema" ,label: 方案 }
+  
+  CB_HideAndSwitchDefault: { text: '{KB_Default}{K_Hide}' ,label: '﹀' }
+  
+  # 外部功能鍵
+  SP_Date: {label: 日期, command: date, option: "yyyy-MM-dd"}
+  SP_ChineseDate: {label: 農曆, command: date, option: "zh_CN@calendar=chinese"} #農曆等日期(>=Android 7.0)：date 語言@calendar=曆法 格式。具體參見https://developer.android.com/reference/android/icu/util/Calendar.html
+  SP_Time: {label: 時間, command: date, option: "HH:mm:ss"} #時間： date 格式
+  SP_TrimeApp: {label: 同文, command: run, option: "com.osfans.trime"} #運行程序: run 包名
+  SP_TrimeCmp: {label: 同文組件, command: run, option: "com.osfans.trime/.Pref"} #運行程序指定組件: run 包名/組件名
+  SP_Share: {label: 分享, command: send, option: "%s"} #分享指定文本: %s或者%1$s爲當前字符
+  SP_Deploy: {label: 部署, command: broadcast, option: "com.osfans.trime.deploy"}
+  SP_Sync: {label: 同步, command: broadcast, option: "com.osfans.trime.sync"}
+
+  # RIME狀態
+  Mode_switch:     { toggle: ascii_mode       ,send: Mode_switch ,states: [ 中文, ASCII ]}
+  Zenkaku_Hankaku: { toggle: full_shape       ,send: Mode_switch ,states: [ 半形, 全形 ]}
+  Henkan:          { toggle: simplification   ,send: Mode_switch ,states: [ 漢字, 汉字 ]}
+  Charset_switch:  { toggle: extended_charset ,send: Mode_switch ,states: [ 常用, 增廣 ]}
+  Punct_switch:    { toggle: ascii_punct      ,send: Mode_switch ,states: [ '。，', '．，' ]}
+  
+# ———— 鍵盤二級佈局 ————
+keybase:
+  lr1:
+    click: 'x'
+    key_back_color: CLB_H1
+    hilited_key_back_color: CHB_H1
+    key_text_color: CLT_H1
+  lr2:
+    __include: keybase/lr1
+  lr3:
+    __include: keybase/lr1
+  lkbs:
+    click: K_Backspace
+    key_back_color: CLB_BS
+    hilited_key_back_color: CHB_BS
+    key_text_color: CLT_BS
+  lkfn:
+    click: 'FN'
+    key_back_color: CLB_FN
+    hilited_key_back_color: CHB_FN
+    key_text_color: CLT_FN
+  lket:
+    click: K_Enter
+    long_click: HK_CtrlShiftEnter
+    key_back_color: CLB_ET
+    hilited_key_back_color: CHB_ET
+    key_text_color: CLT_ET
+  lksp:
+    click: K_Space_NoPreview
+    long_click: F_Menu_F_Slash
+    key_symbol_color: 0x90808080 # alpha值不能太低不然會閃爍
+    key_back_color: CLB_SP
+    hilited_key_back_color: CLB_SP
+    key_text_color: CLT_SP
+  lkspb:
+    __include: keybase/lksp
+    key_text_color: 0x50808080
+  lrnt:
+    height: 30
+    round_corner: 16
+    key_back_color: CLB_NR
+    hilited_key_back_color: CHB_NR
+    key_text_color: CLT_NR
+    key_text_offset_x: -2
+    key_symbol_offset_x: 9
+    key_text_size: 18
+    key_symbol_color: 0x80808080
+
+keyboard_components:
+  0db: &kb_default_base
+    author: "Baopaau"
+    
+    reset_ascii_mode: false
+
+    # label_transform: none
+    ascii_mode: 0
+    # ascii_keyboard: ""
+    # lock: false
+    # columns: 10 # 超過則換行，整數，預設30，設為-1即無限
+    # width: 10 # 單位屏幕寬度百分比
+    # height: 44 # 單位像素px
+    # horizontal_gap: 
+    # vertical_gap:
+    # round_corner:
+    # keyboard_back_color:
+    # key_press_offset_x: 2 #按下時偏移，會叠加於symbol、text和hint，預設0
+    # key_press_offset_y: 2
+    # key_symbol_offset_x: 0
+    # key_symbol_offset_y: 0
+    # key_text_offset_x: 0
+    # key_text_offset_y: 0
+    # key_hint_offset_x: 0
+    # key_hint_offset_y: 0
+    
+    keys: []
+    
+  0lm: &kb_letter_middle
+    keys/+:
+    - &K_q { __include: keybase/lr1 ,click: 'q' ,long_click: K_Tab }
+    - &K_w { __include: keybase/lr1 ,click: 'w' ,long_click: '+' }
+    - &K_e { __include: keybase/lr1 ,click: 'e' ,long_click: '=' }
+    - &K_r { __include: keybase/lr1 ,click: 'r' ,long_click: '{' }
+    - &K_t { __include: keybase/lr1 ,click: 't' ,long_click: '}' }
+    - &K_y { __include: keybase/lr1 ,click: 'y' ,long_click: HK_Redo }
+    - &K_u { __include: keybase/lr1 ,click: 'u' ,long_click: '<' }
+    - &K_i { __include: keybase/lr1 ,click: 'i' ,long_click: '>' }
+    - &K_o { __include: keybase/lr1 ,click: 'o' ,long_click: '[' }
+    - &K_p { __include: keybase/lr1 ,click: 'p' ,long_click: ']' }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+    - &K5_Colon { width: 5 ,key_back_color: 0x00000000 ,click: ':' ,long_click: ';' }
+    - &K_a { __include: keybase/lr2 ,click: 'a' ,long_click: HK_SelectAll }
+    - &K_s { __include: keybase/lr2 ,click: 's' ,long_click: HK_SelectWord }
+    - &K_d { __include: keybase/lr2 ,click: 'd' ,long_click: '`' }
+    - &K_f { __include: keybase/lr2 ,click: 'f' }
+    - &K_g { __include: keybase/lr2 ,click: 'g' }
+    - &K_h { __include: keybase/lr2 ,click: 'h' }
+    - &K_j { __include: keybase/lr2 ,click: 'j' ,long_click: '~' }
+    - &K_k { __include: keybase/lr2 ,click: 'k' ,long_click: '?' }
+    - &K_l { __include: keybase/lr2 ,click: 'l' ,long_click: '!' }
+    - &K5_Apost { width: 5 ,key_back_color: 0x00000000 ,click: "'" ,long_click: '"' }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+    - &K_SF { width: 13 ,click: K_Shift ,send_bindings: false ,key_text_size: 24 }
+    - { width: 2}
+    - &K_z { __include: keybase/lr3 ,click: 'z' ,long_click: HK_Undo }
+    - &K_x { __include: keybase/lr3 ,click: 'x' ,long_click: HK_Cut }
+    - &K_c { __include: keybase/lr3 ,click: 'c' ,long_click: HK_Copy }
+    - &K_v { __include: keybase/lr3 ,click: 'v' ,long_click: HK_Paste }
+    - &K_b { __include: keybase/lr3 ,click: 'b' ,long_click: '|'}
+    - &K_n { __include: keybase/lr3 ,click: 'n' ,long_click: '\' }
+    - &K_m { __include: keybase/lr3 ,click: 'm' ,long_click: '/' }
+    - { width: 2 }
+    - &K_BS { __include: keybase/lkbs ,width: 13 ,key_text_size: 22 ,key_text_offset_y: -2 }
+        
+  0lmb: &kb_letter_middle_b
+    keys/+:
+    - { width: 100 ,height: *H_GAP }
+    
+    - &K15_SKB_Number { __include: keybase/lkfn  ,width: 15 ,click: KB_Number_S }
+    - &K10_SKB_FN     { __include: keybase/lkfn  ,click: K_Hide_S, long_click: F_Menu_S }
+    - &K50_SP_1of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_Slash      ,long_click: K_Slash_E      }
+    - &K50_SP_2of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_Underscore ,long_click: K_Underscore_E }
+    - &K50_SP_3of5    { __include: keybase/lksp  ,width: 22 ,click: K_Space_NoPreview       ,long_click: F_Menu_E       }
+    - &K50_SP_4of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_Comma      ,long_click: K_Comma_E      }
+    - &K50_SP_5of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_FullStop   ,long_click: K_FullStop_E   }
+    - &K25_Enter      { __include: keybase/lket  ,width: 25 ,key_text_size: 20 ,key_text_offset_y: 2 }
+
+  
+  0lmm: &kb_letter_middle_mod
+    'keys/@last/key_back_color':  0xff808080
+    
+    
+  0lt: &kb_letter_top
+    0hbar: &H_BAR 1.2
+    keys/+:
+    - { width: 100 ,height: 4 }
+    
+    - { width: 19 ,height: *H_BAR }
+    - { width: 62 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x20808080 }
+    - { width: 19 ,height: *H_BAR }
+    
+    - { width: 100 ,height: *H_GAP }
+ 
+  0lb: &kb_letter_bottom
+    keys/+: 
+    - { width: 100 ,height: 2 }
+    
+    - { width: 25 ,height: *H_BAR }
+    - { width: 50 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x10808080 }
+    - { width: 25 ,height: *H_BAR }
+    
+    - { width: 100 ,height: 4 }
+    
+  0lnrtt: &kb_letter_nrt_top
+    keys/+:
+    - { width: 100 ,height: 6 }
+        
+    - { __include: keybase/lrnt ,click: '1' ,long_click: '!' }
+    - { __include: keybase/lrnt ,click: '2' ,long_click: '@' }
+    - { __include: keybase/lrnt ,click: '3' ,long_click: '#' }
+    - { __include: keybase/lrnt ,click: '4' ,long_click: '$' }
+    - { __include: keybase/lrnt ,click: '5' ,long_click: '%' }
+    - { __include: keybase/lrnt ,click: '6' ,long_click: '^' }
+    - { __include: keybase/lrnt ,click: '7' ,long_click: '&' }
+    - { __include: keybase/lrnt ,click: '8' ,long_click: '*' }
+    - { __include: keybase/lrnt ,click: '9' ,long_click: '(' }
+    - { __include: keybase/lrnt ,click: '0' ,long_click: ')' }
+
+    - { width: 100 ,height: 5 }
+    
+  0lnrtb: &kb_letter_nrt_bottom
+    keys/+: 
+    - { width: 100 ,height: 2 }
+    
+    - { width: 25 ,height: *H_BAR }
+    - { width: 50 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x18808080 }
+    - { width: 25 ,height: *H_BAR }
+    
+    - { width: 100 ,height: 4 }
+    
+  0lcrbt: &kb_letter_crb_top
+    keys/+:
+    - { width: 100 ,height: 4 }
+    
+    - { width: 19 ,height: *H_BAR }
+    - { width: 62 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x10808080 }
+    - { width: 19 ,height: *H_BAR }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+  0lcrbb: &kb_letter_crb_bottom_extra
+    0hcrb: &H_CRB 28
+    keys/+:
+    - { width: 25   ,height: *H_CRB }
+    - { width: 12.5 ,height: *H_CRB ,click: K_Left_R  ,key_back_color: 0x10808080 }
+    - { width: 12.5 ,height: *H_CRB ,click: K_Down_R  ,key_back_color: 0x10808080 }
+    - { width: 12.5 ,height: *H_CRB ,click: K_Up_R    ,key_back_color: 0x10808080 }
+    - { width: 12.5 ,height: *H_CRB ,click: K_Right_R ,key_back_color: 0x10808080 }
+    - { width: 25   ,height: *H_CRB }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+  0nm: &kb_number_middle
+    keys/+:
+    - { width: 100 ,height: *H_GAP }
+    
+    - { width: 12 ,click: '[' }
+    - { width: 12 ,click: ']' }
+    - { width: 1.25 }
+    - { width: 16.5 ,click: 7 }
+    - { width: 16.5 ,click: 8 }
+    - { width: 16.5 ,click: 9 }
+    - { width: 1.25 }
+    - { width: 12 ,click: '+' }
+    - { width: 12 ,click: '*' }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+    - { width: 12 ,click: '(' }
+    - { width: 12 ,click: ')' }
+    - { width: 1.25 }
+    - { width: 16.5 ,click: 4 }
+    - { width: 16.5 ,click: 5 }
+    - { width: 16.5 ,click: 6 }
+    - { width: 1.25 }
+    - { width: 12 ,click: '-' }
+    - { width: 12 ,click: '/' }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+    - { width: 12 ,click: '^' }
+    - { width: 12 ,click: '%' }
+    - { width: 1.25 }
+    - { width: 16.5 ,click: 1 }
+    - { width: 16.5 ,click: 2 }
+    - { width: 16.5 ,click: 3 }
+    - { width: 1.25 }
+    - { __include: keybase/lkbs ,width: 24 ,key_text_size: 22 ,key_text_offset_y: -2 }
+    
+    - { width: 100 ,height: *H_GAP }
+    
+    - { __include: keybase/lkfn  ,width: 24 ,click: KB_Letter_S }
+    - { width: 1.25 }
+    - { width: 16.5 ,click: 0 }
+    - { __include: keybase/lksp ,width: 16.5 ,click: K_Space_NoPreview ,long_click: F_Menu_F_Slash ,key_symbol_color: 0x90808080 }
+    - { width: 16.5 ,click: '=' }
+    - { width: 1.25 }
+    - { __include: keybase/lket  ,width: 24 ,key_text_size: 20 ,key_text_offset_y: 2 }
+
+    
+    
+  0plslr: &kpl_swipe_lr
+      'keys/@0/swipe_left':  K_Left
+      'keys/@1/swipe_left':  K_Left
+      'keys/@2/swipe_left':  K_Left
+      'keys/@3/swipe_left':  K_Left
+      'keys/@4/swipe_left':  K_Left
+      'keys/@5/swipe_left':  K_Left
+      'keys/@6/swipe_left':  K_Left
+      'keys/@7/swipe_left':  K_Left
+      'keys/@8/swipe_left':  K_Left
+      'keys/@9/swipe_left':  K_Left
+      'keys/@10/swipe_left': K_Left
+      'keys/@11/swipe_left': K_Left
+      'keys/@12/swipe_left': K_Left
+      'keys/@13/swipe_left': K_Left
+      'keys/@14/swipe_left': K_Left
+      'keys/@15/swipe_left': K_Left
+      'keys/@16/swipe_left': K_Left
+      'keys/@17/swipe_left': K_Left
+      'keys/@18/swipe_left': K_Left
+      'keys/@19/swipe_left': K_Left
+      'keys/@20/swipe_left': K_Left
+      'keys/@21/swipe_left': K_Left
+      'keys/@22/swipe_left': K_Left
+      'keys/@23/swipe_left': K_Left
+      'keys/@24/swipe_left': K_Left
+      'keys/@25/swipe_left': K_Left
+      'keys/@26/swipe_left': K_Left
+      'keys/@27/swipe_left': K_Left
+      'keys/@28/swipe_left': K_Left
+      'keys/@29/swipe_left': K_Left
+      'keys/@30/swipe_left': K_Left
+      'keys/@31/swipe_left': K_Left
+      'keys/@32/swipe_left': K_Left
+      'keys/@33/swipe_left': K_Left
+      'keys/@34/swipe_left': K_Left
+      'keys/@35/swipe_left': K_Left
+      'keys/@36/swipe_left': K_Left
+      'keys/@37/swipe_left': K_Left
+      'keys/@38/swipe_left': K_Left
+      'keys/@39/swipe_left': K_Left
+      'keys/@40/swipe_left': K_Left
+      'keys/@41/swipe_left': K_Left
+      'keys/@42/swipe_left': K_Left
+      'keys/@43/swipe_left': K_Left
+      'keys/@44/swipe_left': K_Left
+      'keys/@45/swipe_left': K_Left
+      'keys/@46/swipe_left': K_Left
+      'keys/@47/swipe_left': K_Left
+      'keys/@48/swipe_left': K_Left
+      'keys/@49/swipe_left': K_Left
+      
+      'keys/@0/swipe_right':  K_Right
+      'keys/@1/swipe_right':  K_Right
+      'keys/@2/swipe_right':  K_Right
+      'keys/@3/swipe_right':  K_Right
+      'keys/@4/swipe_right':  K_Right
+      'keys/@5/swipe_right':  K_Right
+      'keys/@6/swipe_right':  K_Right
+      'keys/@7/swipe_right':  K_Right
+      'keys/@8/swipe_right':  K_Right
+      'keys/@9/swipe_right':  K_Right
+      'keys/@10/swipe_right': K_Right
+      'keys/@11/swipe_right': K_Right
+      'keys/@12/swipe_right': K_Right
+      'keys/@13/swipe_right': K_Right
+      'keys/@14/swipe_right': K_Right
+      'keys/@15/swipe_right': K_Right
+      'keys/@16/swipe_right': K_Right
+      'keys/@17/swipe_right': K_Right
+      'keys/@18/swipe_right': K_Right
+      'keys/@19/swipe_right': K_Right
+      'keys/@20/swipe_right': K_Right
+      'keys/@21/swipe_right': K_Right
+      'keys/@22/swipe_right': K_Right
+      'keys/@23/swipe_right': K_Right
+      'keys/@24/swipe_right': K_Right
+      'keys/@25/swipe_right': K_Right
+      'keys/@26/swipe_right': K_Right
+      'keys/@27/swipe_right': K_Right
+      'keys/@28/swipe_right': K_Right
+      'keys/@29/swipe_right': K_Right
+      'keys/@30/swipe_right': K_Right
+      'keys/@31/swipe_right': K_Right
+      'keys/@32/swipe_right': K_Right
+      'keys/@33/swipe_right': K_Right
+      'keys/@34/swipe_right': K_Right
+      'keys/@35/swipe_right': K_Right
+      'keys/@36/swipe_right': K_Right
+      'keys/@37/swipe_right': K_Right
+      'keys/@38/swipe_right': K_Right
+      'keys/@39/swipe_right': K_Right
+      'keys/@40/swipe_right': K_Right
+      'keys/@41/swipe_right': K_Right
+      'keys/@42/swipe_right': K_Right
+      'keys/@43/swipe_right': K_Right
+      'keys/@44/swipe_right': K_Right
+      'keys/@45/swipe_right': K_Right
+      'keys/@46/swipe_right': K_Right
+      'keys/@47/swipe_right': K_Right
+      'keys/@48/swipe_right': K_Right
+      'keys/@49/swipe_right': K_Right
+      
+preset_keyboards:
+  default:
+    __include: /preset_keyboards/letter
+    lock: true
+    
+  letter:
+    name: 主鍵盤
+    __patch:
+    - *kb_default_base     
+    - *kb_letter_top
+    - *kb_letter_middle
+    - *kb_letter_middle_b
+    #- *kb_letter_middle_mod
+    - *kb_letter_bottom
+    - *kpl_swipe_lr
+    - 
+      'keys/@0/swipe_down':  KB_Letter_NRT
+      'keys/@1/swipe_down':  KB_Letter_NRT
+      'keys/@2/swipe_down':  KB_Letter_NRT
+      'keys/@3/swipe_down':  KB_Letter_NRT
+      'keys/@4/swipe_down':  KB_Letter_NRT
+      'keys/@5/swipe_down':  KB_Letter_NRT
+      'keys/@6/swipe_down':  KB_Letter_NRT
+      'keys/@7/swipe_down':  KB_Letter_NRT
+      'keys/@8/swipe_down':  KB_Letter_NRT
+      'keys/@9/swipe_down':  KB_Letter_NRT
+      'keys/@10/swipe_down': KB_Letter_NRT
+      'keys/@11/swipe_down': KB_Letter_NRT
+      'keys/@12/swipe_down': KB_Letter_NRT
+      'keys/@13/swipe_down': KB_Letter_NRT
+      'keys/@14/swipe_down': KB_Letter_NRT
+      'keys/@15/swipe_down': KB_Letter_NRT
+      'keys/@16/swipe_down': KB_Letter_NRT
+      'keys/@17/swipe_down': KB_Letter_NRT
+      'keys/@18/swipe_down': KB_Letter_NRT
+      'keys/@19/swipe_down': KB_Letter_NRT
+      'keys/@20/swipe_down': KB_Letter_NRT
+      'keys/@21/swipe_down': KB_Letter_NRT
+      'keys/@22/swipe_down': KB_Letter_NRT
+      'keys/@23/swipe_down': KB_Letter_NRT
+      'keys/@24/swipe_down': KB_Letter_NRT
+      'keys/@25/swipe_down': KB_Letter_NRT
+      'keys/@26/swipe_down': KB_Letter_NRT
+      'keys/@27/swipe_down': KB_Letter_NRT
+      'keys/@28/swipe_down': KB_Letter_NRT
+      'keys/@29/swipe_down': KB_Letter_NRT
+      'keys/@30/swipe_down': KB_Letter_NRT
+      'keys/@31/swipe_down': KB_Letter_NRT
+      'keys/@32/swipe_down': KB_Letter_NRT
+      'keys/@33/swipe_down': KB_Letter_NRT
+      'keys/@34/swipe_down': KB_Letter_NRT
+      'keys/@35/swipe_down': KB_Letter_NRT
+      'keys/@36/swipe_down': KB_Letter_NRT
+      'keys/@37/swipe_down': KB_Letter_NRT
+      'keys/@38/swipe_down': KB_Letter_NRT
+      'keys/@39/swipe_down': KB_Letter_NRT
+      'keys/@40/swipe_down': KB_Letter_NRT
+      'keys/@41/swipe_down': KB_Letter_NRT
+      'keys/@42/swipe_down': KB_Letter_NRT
+      'keys/@43/swipe_down': KB_Letter_NRT
+      'keys/@44/swipe_down': KB_Letter_NRT
+      'keys/@45/swipe_down': KB_Letter_NRT
+      'keys/@46/swipe_down': KB_Letter_NRT
+      'keys/@47/swipe_down': KB_Letter_NRT
+      'keys/@48/swipe_down': KB_Letter_NRT
+      'keys/@49/swipe_down': KB_Letter_NRT
+      
+      'keys/@0/swipe_up':  KB_Letter_CRB
+      'keys/@1/swipe_up':  KB_Letter_CRB
+      'keys/@2/swipe_up':  KB_Letter_CRB
+      'keys/@3/swipe_up':  KB_Letter_CRB
+      'keys/@4/swipe_up':  KB_Letter_CRB
+      'keys/@5/swipe_up':  KB_Letter_CRB
+      'keys/@6/swipe_up':  KB_Letter_CRB
+      'keys/@7/swipe_up':  KB_Letter_CRB
+      'keys/@8/swipe_up':  KB_Letter_CRB
+      'keys/@9/swipe_up':  KB_Letter_CRB
+      'keys/@10/swipe_up': KB_Letter_CRB
+      'keys/@11/swipe_up': KB_Letter_CRB
+      'keys/@12/swipe_up': KB_Letter_CRB
+      'keys/@13/swipe_up': KB_Letter_CRB
+      'keys/@14/swipe_up': KB_Letter_CRB
+      'keys/@15/swipe_up': KB_Letter_CRB
+      'keys/@16/swipe_up': KB_Letter_CRB
+      'keys/@17/swipe_up': KB_Letter_CRB
+      'keys/@18/swipe_up': KB_Letter_CRB
+      'keys/@19/swipe_up': KB_Letter_CRB
+      'keys/@20/swipe_up': KB_Letter_CRB
+      'keys/@21/swipe_up': KB_Letter_CRB
+      'keys/@22/swipe_up': KB_Letter_CRB
+      'keys/@23/swipe_up': KB_Letter_CRB
+      'keys/@24/swipe_up': KB_Letter_CRB
+      'keys/@25/swipe_up': KB_Letter_CRB
+      'keys/@26/swipe_up': KB_Letter_CRB
+      'keys/@27/swipe_up': KB_Letter_CRB
+      'keys/@28/swipe_up': KB_Letter_CRB
+      'keys/@29/swipe_up': KB_Letter_CRB
+      'keys/@30/swipe_up': KB_Letter_CRB
+      'keys/@31/swipe_up': KB_Letter_CRB
+      'keys/@32/swipe_up': KB_Letter_CRB
+      'keys/@33/swipe_up': KB_Letter_CRB
+      'keys/@34/swipe_up': KB_Letter_CRB
+      'keys/@35/swipe_up': KB_Letter_CRB
+      'keys/@36/swipe_up': KB_Letter_CRB
+      'keys/@37/swipe_up': KB_Letter_CRB
+      'keys/@38/swipe_up': KB_Letter_CRB
+      'keys/@39/swipe_up': KB_Letter_CRB
+      'keys/@40/swipe_up': KB_Letter_CRB
+      'keys/@41/swipe_up': KB_Letter_CRB
+      'keys/@42/swipe_up': KB_Letter_CRB
+      'keys/@43/swipe_up': KB_Letter_CRB
+      'keys/@44/swipe_up': KB_Letter_CRB
+      'keys/@45/swipe_up': KB_Letter_CRB
+      'keys/@46/swipe_up': KB_Letter_CRB
+      'keys/@47/swipe_up': KB_Letter_CRB
+      'keys/@48/swipe_up': KB_Letter_CRB
+      'keys/@49/swipe_up': KB_Letter_CRB
+
+  letter_NRT:
+    name: 主鍵盤 —— 頂部數字行
+    __patch:
+    - *kb_default_base
+    - *kb_letter_nrt_top
+    - *kb_letter_middle
+    - *kb_letter_middle_b
+    - *kb_letter_nrt_bottom
+    - *kpl_swipe_lr
+    -
+      'keys/@0/swipe_down':  K_Nothing
+      'keys/@1/swipe_down':  K_Nothing
+      'keys/@2/swipe_down':  K_Nothing
+      'keys/@3/swipe_down':  K_Nothing
+      'keys/@4/swipe_down':  K_Nothing
+      'keys/@5/swipe_down':  K_Nothing
+      'keys/@6/swipe_down':  K_Nothing
+      'keys/@7/swipe_down':  K_Nothing
+      'keys/@8/swipe_down':  K_Nothing
+      'keys/@9/swipe_down':  K_Nothing
+      'keys/@10/swipe_down': K_Nothing
+      'keys/@11/swipe_down': K_Nothing
+      'keys/@12/swipe_down': K_Nothing
+      'keys/@13/swipe_down': K_Nothing
+      'keys/@14/swipe_down': K_Nothing
+      'keys/@15/swipe_down': K_Nothing
+      'keys/@16/swipe_down': K_Nothing
+      'keys/@17/swipe_down': K_Nothing
+      'keys/@18/swipe_down': K_Nothing
+      'keys/@19/swipe_down': K_Nothing
+      'keys/@20/swipe_down': K_Nothing
+      'keys/@21/swipe_down': K_Nothing
+      'keys/@22/swipe_down': K_Nothing
+      'keys/@23/swipe_down': K_Nothing
+      'keys/@24/swipe_down': K_Nothing
+      'keys/@25/swipe_down': K_Nothing
+      'keys/@26/swipe_down': K_Nothing
+      'keys/@27/swipe_down': K_Nothing
+      'keys/@28/swipe_down': K_Nothing
+      'keys/@29/swipe_down': K_Nothing
+      'keys/@30/swipe_down': K_Nothing
+      'keys/@31/swipe_down': K_Nothing
+      'keys/@32/swipe_down': K_Nothing
+      'keys/@33/swipe_down': K_Nothing
+      'keys/@34/swipe_down': K_Nothing
+      'keys/@35/swipe_down': K_Nothing
+      'keys/@36/swipe_down': K_Nothing
+      'keys/@37/swipe_down': K_Nothing
+      'keys/@38/swipe_down': K_Nothing
+      'keys/@39/swipe_down': K_Nothing
+      'keys/@40/swipe_down': K_Nothing
+      'keys/@41/swipe_down': K_Nothing
+      'keys/@42/swipe_down': K_Nothing
+      'keys/@43/swipe_down': K_Nothing
+      'keys/@44/swipe_down': K_Nothing
+      'keys/@45/swipe_down': K_Nothing
+      'keys/@46/swipe_down': K_Nothing
+      'keys/@47/swipe_down': K_Nothing
+      'keys/@48/swipe_down': K_Nothing
+      'keys/@49/swipe_down': K_Nothing
+    
+      'keys/@0/swipe_up':  KB_Letter
+      'keys/@1/swipe_up':  KB_Letter
+      'keys/@2/swipe_up':  KB_Letter
+      'keys/@3/swipe_up':  KB_Letter
+      'keys/@4/swipe_up':  KB_Letter
+      'keys/@5/swipe_up':  KB_Letter
+      'keys/@6/swipe_up':  KB_Letter
+      'keys/@7/swipe_up':  KB_Letter
+      'keys/@8/swipe_up':  KB_Letter
+      'keys/@9/swipe_up':  KB_Letter
+      'keys/@10/swipe_up': KB_Letter
+      'keys/@11/swipe_up': KB_Letter
+      'keys/@12/swipe_up': KB_Letter
+      'keys/@13/swipe_up': KB_Letter
+      'keys/@14/swipe_up': KB_Letter
+      'keys/@15/swipe_up': KB_Letter
+      'keys/@16/swipe_up': KB_Letter
+      'keys/@17/swipe_up': KB_Letter
+      'keys/@18/swipe_up': KB_Letter
+      'keys/@19/swipe_up': KB_Letter
+      'keys/@20/swipe_up': KB_Letter
+      'keys/@21/swipe_up': KB_Letter
+      'keys/@22/swipe_up': KB_Letter
+      'keys/@23/swipe_up': KB_Letter
+      'keys/@24/swipe_up': KB_Letter
+      'keys/@25/swipe_up': KB_Letter
+      'keys/@26/swipe_up': KB_Letter
+      'keys/@27/swipe_up': KB_Letter
+      'keys/@28/swipe_up': KB_Letter
+      'keys/@29/swipe_up': KB_Letter
+      'keys/@30/swipe_up': KB_Letter
+      'keys/@31/swipe_up': KB_Letter
+      'keys/@32/swipe_up': KB_Letter
+      'keys/@33/swipe_up': KB_Letter
+      'keys/@34/swipe_up': KB_Letter
+      'keys/@35/swipe_up': KB_Letter
+      'keys/@36/swipe_up': KB_Letter
+      'keys/@37/swipe_up': KB_Letter
+      'keys/@38/swipe_up': KB_Letter
+      'keys/@39/swipe_up': KB_Letter
+      'keys/@40/swipe_up': KB_Letter
+      'keys/@41/swipe_up': KB_Letter
+      'keys/@42/swipe_up': KB_Letter
+      'keys/@43/swipe_up': KB_Letter
+      'keys/@44/swipe_up': KB_Letter
+      'keys/@45/swipe_up': KB_Letter
+      'keys/@46/swipe_up': KB_Letter
+      'keys/@47/swipe_up': KB_Letter
+      'keys/@48/swipe_up': KB_Letter
+      'keys/@49/swipe_up': KB_Letter
+      
+  letter_CRB:
+    name: 主鍵盤 —— 底部控制行
+    __patch:
+    - *kb_default_base
+    - *kb_letter_crb_top
+    - *kb_letter_middle
+    - *kb_letter_middle_b
+    - *kb_letter_bottom
+    - *kb_letter_crb_bottom_extra
+    - *kpl_swipe_lr
+    -
+      'keys/@0/swipe_down':  KB_Letter
+      'keys/@1/swipe_down':  KB_Letter
+      'keys/@2/swipe_down':  KB_Letter
+      'keys/@3/swipe_down':  KB_Letter
+      'keys/@4/swipe_down':  KB_Letter
+      'keys/@5/swipe_down':  KB_Letter
+      'keys/@6/swipe_down':  KB_Letter
+      'keys/@7/swipe_down':  KB_Letter
+      'keys/@8/swipe_down':  KB_Letter
+      'keys/@9/swipe_down':  KB_Letter
+      'keys/@10/swipe_down': KB_Letter
+      'keys/@11/swipe_down': KB_Letter
+      'keys/@12/swipe_down': KB_Letter
+      'keys/@13/swipe_down': KB_Letter
+      'keys/@14/swipe_down': KB_Letter
+      'keys/@15/swipe_down': KB_Letter
+      'keys/@16/swipe_down': KB_Letter
+      'keys/@17/swipe_down': KB_Letter
+      'keys/@18/swipe_down': KB_Letter
+      'keys/@19/swipe_down': KB_Letter
+      'keys/@20/swipe_down': KB_Letter
+      'keys/@21/swipe_down': KB_Letter
+      'keys/@22/swipe_down': KB_Letter
+      'keys/@23/swipe_down': KB_Letter
+      'keys/@24/swipe_down': KB_Letter
+      'keys/@25/swipe_down': KB_Letter
+      'keys/@26/swipe_down': KB_Letter
+      'keys/@27/swipe_down': KB_Letter
+      'keys/@28/swipe_down': KB_Letter
+      'keys/@29/swipe_down': KB_Letter
+      'keys/@30/swipe_down': KB_Letter
+      'keys/@31/swipe_down': KB_Letter
+      'keys/@32/swipe_down': KB_Letter
+      'keys/@33/swipe_down': KB_Letter
+      'keys/@34/swipe_down': KB_Letter
+      'keys/@35/swipe_down': KB_Letter
+      'keys/@36/swipe_down': KB_Letter
+      'keys/@37/swipe_down': KB_Letter
+      'keys/@38/swipe_down': KB_Letter
+      'keys/@39/swipe_down': KB_Letter
+      'keys/@40/swipe_down': KB_Letter
+      'keys/@41/swipe_down': KB_Letter
+      'keys/@42/swipe_down': KB_Letter
+      'keys/@43/swipe_down': KB_Letter
+      'keys/@44/swipe_down': KB_Letter
+      'keys/@45/swipe_down': KB_Letter
+      'keys/@46/swipe_down': KB_Letter
+      'keys/@47/swipe_down': KB_Letter
+      'keys/@48/swipe_down': KB_Letter
+      'keys/@49/swipe_down': KB_Letter
+      
+      'keys/@0/swipe_up':  K_Nothing
+      'keys/@1/swipe_up':  K_Nothing
+      'keys/@2/swipe_up':  K_Nothing
+      'keys/@3/swipe_up':  K_Nothing
+      'keys/@4/swipe_up':  K_Nothing
+      'keys/@5/swipe_up':  K_Nothing
+      'keys/@6/swipe_up':  K_Nothing
+      'keys/@7/swipe_up':  K_Nothing
+      'keys/@8/swipe_up':  K_Nothing
+      'keys/@9/swipe_up':  K_Nothing
+      'keys/@10/swipe_up': K_Nothing
+      'keys/@11/swipe_up': K_Nothing
+      'keys/@12/swipe_up': K_Nothing
+      'keys/@13/swipe_up': K_Nothing
+      'keys/@14/swipe_up': K_Nothing
+      'keys/@15/swipe_up': K_Nothing
+      'keys/@16/swipe_up': K_Nothing
+      'keys/@17/swipe_up': K_Nothing
+      'keys/@18/swipe_up': K_Nothing
+      'keys/@19/swipe_up': K_Nothing
+      'keys/@20/swipe_up': K_Nothing
+      'keys/@21/swipe_up': K_Nothing
+      'keys/@22/swipe_up': K_Nothing
+      'keys/@23/swipe_up': K_Nothing
+      'keys/@24/swipe_up': K_Nothing
+      'keys/@25/swipe_up': K_Nothing
+      'keys/@26/swipe_up': K_Nothing
+      'keys/@27/swipe_up': K_Nothing
+      'keys/@28/swipe_up': K_Nothing
+      'keys/@29/swipe_up': K_Nothing
+      'keys/@30/swipe_up': K_Nothing
+      'keys/@31/swipe_up': K_Nothing
+      'keys/@32/swipe_up': K_Nothing
+      'keys/@33/swipe_up': K_Nothing
+      'keys/@34/swipe_up': K_Nothing
+      'keys/@35/swipe_up': K_Nothing
+      'keys/@36/swipe_up': K_Nothing
+      'keys/@37/swipe_up': K_Nothing
+      'keys/@38/swipe_up': K_Nothing
+      'keys/@39/swipe_up': K_Nothing
+      'keys/@40/swipe_up': K_Nothing
+      'keys/@41/swipe_up': K_Nothing
+      'keys/@42/swipe_up': K_Nothing
+      'keys/@43/swipe_up': K_Nothing
+      'keys/@44/swipe_up': K_Nothing
+      'keys/@45/swipe_up': K_Nothing
+      'keys/@46/swipe_up': K_Nothing
+      'keys/@47/swipe_up': K_Nothing
+      'keys/@48/swipe_up': K_Nothing
+      'keys/@49/swipe_up': K_Nothing
+        
+  number:
+    name: 副鍵盤：數字頁
+    ___patch:
+    - *kb_default_base     
+    - *kb_letter_top
+    - *kb_number_middle
+    - *kb_letter_bottom
+    - *kpl_swipe_lr
+    
+    keys:
+    - { width: 100 ,height: *H_GAP_T }
+    
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '1' ,long_click: K_Escape}
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '2' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '3' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '4' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '5' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '6' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '7' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '8' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '9' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_NR ,hilited_key_back_color: CHB_NR ,key_text_color: CLT_H1 ,click: '0' ,long_click: K_Hide }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '-' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '/' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: ':' ,label: '：' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: ';' ,label: '；' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '(' ,label: '（' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: ')' ,label: '）' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '$' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '@' ,long_click: '&' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '#' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '`' }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CHT_FN ,key_text_color: CLT_FN ,width: 13 ,click: KB_Symbol_S }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_FStop_RD ,width: 12 ,label: '。' ,long_click: HK_Cut }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Comma_RD ,width: 12 ,label: '，' ,long_click: HK_Copy }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QueMk_RD ,width: 12 ,label: '？' ,long_click: HK_Paste }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_XclMk_RD ,width: 12 ,label: '！' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Apost_RD ,width: 12 ,label: '‘ ’' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QotMk_RD ,width: 12 ,label: '“ ”' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 ,key_text_offset_y: -2 }
+   
+    - { width: 100 ,height: *H_GAP }
+   
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,width: 15 ,click: KB_Default }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,click: K_Hide_S, long_click: F_Menu_E }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_SP ,hilited_key_back_color: CLB_SP ,key_text_color: CLT_SP ,width: 50 ,click: K_Space_NoPreview ,long_click: F_Menu_F_Slash ,key_symbol_color: 0x90808080 } # alpha值不能太低不然會閃爍
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lket ,width: 25 ,click: K_Enter ,key_text_size: 20 ,key_text_offset_y: 2 }
+
+    - { width: 100 ,height: *H_GAP_B }
+
+  symbols:
+    name: 副鍵盤：符號頁
+    
+    author: "Baopaau"
+    columns: 10
+    ascii_mode: 0
+    keys:
+    - { width: 100 ,height: *H_GAP_T }
+    
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '[' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: ']' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '{' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '}' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '∟' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '%' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '^' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '*' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '+' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr1 ,click: '=' }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: K_Underscore_ASCII }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '\' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '|' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '~' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '<' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '>' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '¶' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '&' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '¿' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lr2 ,click: '¡' }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CHT_FN ,key_text_color: CLT_FN ,width: 13 ,click: KB_Number_S }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_FStop_RD ,width: 12 ,label: '。' ,long_click: HK_Cut }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Comma_RD ,width: 12 ,label: '，' ,long_click: HK_Copy }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QueMk_RD ,width: 12 ,label: '？' ,long_click: HK_Paste }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_XclMk_RD ,width: 12 ,label: '！' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Apost_RD ,width: 12 ,label: '‘ ’' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QotMk_RD ,width: 12 ,label: '“ ”' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 ,key_text_offset_y: -2 }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,width: 15 ,click: KB_Default }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,click: K_Hide_S, long_click: F_Menu_E }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_SP ,hilited_key_back_color: CLB_SP ,key_text_color: CLT_SP ,width: 50 ,click: K_Space_NoPreview ,long_click: F_Menu_F_Slash ,key_symbol_color: 0x90808080}
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lket ,width: 25 ,click: K_Enter ,key_text_size: 20 ,key_text_offset_y: 2 }
+    
+    - { width: 100 ,height: *H_GAP_B }
+    
+  controller:
+    name: 控制鍵盤
+    author: "Baopaau"
+    ascii_mode: 0
+    columns: 10
+    keys:
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CHT_FN ,key_text_color: CLT_FN ,width: 13 ,click: KB_Number_S }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_FStop_RD ,width: 12 ,label: '。' ,long_click: HK_Cut }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Comma_RD ,width: 12 ,label: '，' ,long_click: HK_Copy }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QueMk_RD ,width: 12 ,label: '？' ,long_click: HK_Paste }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_XclMk_RD ,width: 12 ,label: '！' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Apost_RD ,width: 12 ,label: '‘ ’' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QotMk_RD ,width: 12 ,label: '“ ”' }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 ,key_text_offset_y: -2 }
+
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,width: 15 ,click: KB_Default }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,click: K_Hide_S, long_click: F_Menu_E }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_SP ,hilited_key_back_color: CLB_SP ,key_text_color: CLT_SP ,width: 50 ,click: K_Space_NoPreview ,long_click: F_Menu_F_Slash ,key_symbol_color: 0x90808080}
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,__include: keybase/lket ,width: 25 ,click: K_Enter ,key_text_size: 20 ,key_text_offset_y: 2 }
+  
+  qwerty0:
+    __include: /preset_keyboards/default
+  qwerty_:
+    __include: /preset_keyboards/default
+  qwerty:
+    __include: /preset_keyboards/default
+    
+ 
