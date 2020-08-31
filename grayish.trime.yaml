@@ -1,7 +1,7 @@
 # Trime custom style settings
 # encoding: utf-8
 
-config_version: "1.2"
+config_version: "1.1"
 name: 小灰灰
 author: 抱豹 <baopaau@gmail.com>
 # 黑白自適應配色方案，適配安卓10暗黑模式
@@ -89,7 +89,7 @@ style:
     sticky_lines: 0               # 固頂行數
     all_phrases:  false           # 所有滿足條件的詞語都顯示在窗口
     border:       2               # 邊框寬度
-    max_width:    3300             # 最大寬度，超過則自動換行
+    max_width:    3300            # 最大寬度，超過則自動換行
     max_height:   400             
     min_width:    60              
     min_height:   0               
@@ -384,6 +384,415 @@ android_keys:
 # android_keys:
 #   __include: trime:/android_keys
 
+swipe_actions:
+  0plslr: &kpl_swipe_lr
+      'keys/@0/swipe_left':  K_Left
+      'keys/@1/swipe_left':  K_Left
+      'keys/@2/swipe_left':  K_Left
+      'keys/@3/swipe_left':  K_Left
+      'keys/@4/swipe_left':  K_Left
+      'keys/@5/swipe_left':  K_Left
+      'keys/@6/swipe_left':  K_Left
+      'keys/@7/swipe_left':  K_Left
+      'keys/@8/swipe_left':  K_Left
+      'keys/@9/swipe_left':  K_Left
+      'keys/@10/swipe_left': K_Left
+      'keys/@11/swipe_left': K_Left
+      'keys/@12/swipe_left': K_Left
+      'keys/@13/swipe_left': K_Left
+      'keys/@14/swipe_left': K_Left
+      'keys/@15/swipe_left': K_Left
+      'keys/@16/swipe_left': K_Left
+      'keys/@17/swipe_left': K_Left
+      'keys/@18/swipe_left': K_Left
+      'keys/@19/swipe_left': K_Left
+      'keys/@20/swipe_left': K_Left
+      'keys/@21/swipe_left': K_Left
+      'keys/@22/swipe_left': K_Left
+      'keys/@23/swipe_left': K_Left
+      'keys/@24/swipe_left': K_Left
+      'keys/@25/swipe_left': K_Left
+      'keys/@26/swipe_left': K_Left
+      'keys/@27/swipe_left': K_Left
+      'keys/@28/swipe_left': K_Left
+      'keys/@29/swipe_left': K_Left
+      'keys/@30/swipe_left': K_Left
+      'keys/@31/swipe_left': K_Left
+      'keys/@32/swipe_left': K_Left
+      'keys/@33/swipe_left': K_Left
+      'keys/@34/swipe_left': K_Left
+      'keys/@35/swipe_left': K_Left
+      'keys/@36/swipe_left': K_Left
+      'keys/@37/swipe_left': K_Left
+      'keys/@38/swipe_left': K_Left
+      'keys/@39/swipe_left': K_Left
+      'keys/@40/swipe_left': K_Left
+      'keys/@41/swipe_left': K_Left
+      'keys/@42/swipe_left': K_Left
+      'keys/@43/swipe_left': K_Left
+      'keys/@44/swipe_left': K_Left
+      'keys/@45/swipe_left': K_Left
+      'keys/@46/swipe_left': K_Left
+      'keys/@47/swipe_left': K_Left
+      'keys/@48/swipe_left': K_Left
+      'keys/@49/swipe_left': K_Left
+      'keys/@0/swipe_right':  K_Right
+      'keys/@1/swipe_right':  K_Right
+      'keys/@2/swipe_right':  K_Right
+      'keys/@3/swipe_right':  K_Right
+      'keys/@4/swipe_right':  K_Right
+      'keys/@5/swipe_right':  K_Right
+      'keys/@6/swipe_right':  K_Right
+      'keys/@7/swipe_right':  K_Right
+      'keys/@8/swipe_right':  K_Right
+      'keys/@9/swipe_right':  K_Right
+      'keys/@10/swipe_right': K_Right
+      'keys/@11/swipe_right': K_Right
+      'keys/@12/swipe_right': K_Right
+      'keys/@13/swipe_right': K_Right
+      'keys/@14/swipe_right': K_Right
+      'keys/@15/swipe_right': K_Right
+      'keys/@16/swipe_right': K_Right
+      'keys/@17/swipe_right': K_Right
+      'keys/@18/swipe_right': K_Right
+      'keys/@19/swipe_right': K_Right
+      'keys/@20/swipe_right': K_Right
+      'keys/@21/swipe_right': K_Right
+      'keys/@22/swipe_right': K_Right
+      'keys/@23/swipe_right': K_Right
+      'keys/@24/swipe_right': K_Right
+      'keys/@25/swipe_right': K_Right
+      'keys/@26/swipe_right': K_Right
+      'keys/@27/swipe_right': K_Right
+      'keys/@28/swipe_right': K_Right
+      'keys/@29/swipe_right': K_Right
+      'keys/@30/swipe_right': K_Right
+      'keys/@31/swipe_right': K_Right
+      'keys/@32/swipe_right': K_Right
+      'keys/@33/swipe_right': K_Right
+      'keys/@34/swipe_right': K_Right
+      'keys/@35/swipe_right': K_Right
+      'keys/@36/swipe_right': K_Right
+      'keys/@37/swipe_right': K_Right
+      'keys/@38/swipe_right': K_Right
+      'keys/@39/swipe_right': K_Right
+      'keys/@40/swipe_right': K_Right
+      'keys/@41/swipe_right': K_Right
+      'keys/@42/swipe_right': K_Right
+      'keys/@43/swipe_right': K_Right
+      'keys/@44/swipe_right': K_Right
+      'keys/@45/swipe_right': K_Right
+      'keys/@46/swipe_right': K_Right
+      'keys/@47/swipe_right': K_Right
+      'keys/@48/swipe_right': K_Right
+      'keys/@49/swipe_right': K_Right
+      
+  0plsudm: &kpl_swipe_ud_m
+      'keys/@0/swipe_down':  KB_Letter_NRT
+      'keys/@1/swipe_down':  KB_Letter_NRT
+      'keys/@2/swipe_down':  KB_Letter_NRT
+      'keys/@3/swipe_down':  KB_Letter_NRT
+      'keys/@4/swipe_down':  KB_Letter_NRT
+      'keys/@5/swipe_down':  KB_Letter_NRT
+      'keys/@6/swipe_down':  KB_Letter_NRT
+      'keys/@7/swipe_down':  KB_Letter_NRT
+      'keys/@8/swipe_down':  KB_Letter_NRT
+      'keys/@9/swipe_down':  KB_Letter_NRT
+      'keys/@10/swipe_down': KB_Letter_NRT
+      'keys/@11/swipe_down': KB_Letter_NRT
+      'keys/@12/swipe_down': KB_Letter_NRT
+      'keys/@13/swipe_down': KB_Letter_NRT
+      'keys/@14/swipe_down': KB_Letter_NRT
+      'keys/@15/swipe_down': KB_Letter_NRT
+      'keys/@16/swipe_down': KB_Letter_NRT
+      'keys/@17/swipe_down': KB_Letter_NRT
+      'keys/@18/swipe_down': KB_Letter_NRT
+      'keys/@19/swipe_down': KB_Letter_NRT
+      'keys/@20/swipe_down': KB_Letter_NRT
+      'keys/@21/swipe_down': KB_Letter_NRT
+      'keys/@22/swipe_down': KB_Letter_NRT
+      'keys/@23/swipe_down': KB_Letter_NRT
+      'keys/@24/swipe_down': KB_Letter_NRT
+      'keys/@25/swipe_down': KB_Letter_NRT
+      'keys/@26/swipe_down': KB_Letter_NRT
+      'keys/@27/swipe_down': KB_Letter_NRT
+      'keys/@28/swipe_down': KB_Letter_NRT
+      'keys/@29/swipe_down': KB_Letter_NRT
+      'keys/@30/swipe_down': KB_Letter_NRT
+      'keys/@31/swipe_down': KB_Letter_NRT
+      'keys/@32/swipe_down': KB_Letter_NRT
+      'keys/@33/swipe_down': KB_Letter_NRT
+      'keys/@34/swipe_down': KB_Letter_NRT
+      'keys/@35/swipe_down': KB_Letter_NRT
+      'keys/@36/swipe_down': KB_Letter_NRT
+      'keys/@37/swipe_down': KB_Letter_NRT
+      'keys/@38/swipe_down': KB_Letter_NRT
+      'keys/@39/swipe_down': KB_Letter_NRT
+      'keys/@40/swipe_down': KB_Letter_NRT
+      'keys/@41/swipe_down': KB_Letter_NRT
+      'keys/@42/swipe_down': KB_Letter_NRT
+      'keys/@43/swipe_down': KB_Letter_NRT
+      'keys/@44/swipe_down': KB_Letter_NRT
+      'keys/@45/swipe_down': KB_Letter_NRT
+      'keys/@46/swipe_down': KB_Letter_NRT
+      'keys/@47/swipe_down': KB_Letter_NRT
+      'keys/@48/swipe_down': KB_Letter_NRT
+      'keys/@49/swipe_down': KB_Letter_NRT
+      'keys/@0/swipe_up':  KB_Letter_CRB
+      'keys/@1/swipe_up':  KB_Letter_CRB
+      'keys/@2/swipe_up':  KB_Letter_CRB
+      'keys/@3/swipe_up':  KB_Letter_CRB
+      'keys/@4/swipe_up':  KB_Letter_CRB
+      'keys/@5/swipe_up':  KB_Letter_CRB
+      'keys/@6/swipe_up':  KB_Letter_CRB
+      'keys/@7/swipe_up':  KB_Letter_CRB
+      'keys/@8/swipe_up':  KB_Letter_CRB
+      'keys/@9/swipe_up':  KB_Letter_CRB
+      'keys/@10/swipe_up': KB_Letter_CRB
+      'keys/@11/swipe_up': KB_Letter_CRB
+      'keys/@12/swipe_up': KB_Letter_CRB
+      'keys/@13/swipe_up': KB_Letter_CRB
+      'keys/@14/swipe_up': KB_Letter_CRB
+      'keys/@15/swipe_up': KB_Letter_CRB
+      'keys/@16/swipe_up': KB_Letter_CRB
+      'keys/@17/swipe_up': KB_Letter_CRB
+      'keys/@18/swipe_up': KB_Letter_CRB
+      'keys/@19/swipe_up': KB_Letter_CRB
+      'keys/@20/swipe_up': KB_Letter_CRB
+      'keys/@21/swipe_up': KB_Letter_CRB
+      'keys/@22/swipe_up': KB_Letter_CRB
+      'keys/@23/swipe_up': KB_Letter_CRB
+      'keys/@24/swipe_up': KB_Letter_CRB
+      'keys/@25/swipe_up': KB_Letter_CRB
+      'keys/@26/swipe_up': KB_Letter_CRB
+      'keys/@27/swipe_up': KB_Letter_CRB
+      'keys/@28/swipe_up': KB_Letter_CRB
+      'keys/@29/swipe_up': KB_Letter_CRB
+      'keys/@30/swipe_up': KB_Letter_CRB
+      'keys/@31/swipe_up': KB_Letter_CRB
+      'keys/@32/swipe_up': KB_Letter_CRB
+      'keys/@33/swipe_up': KB_Letter_CRB
+      'keys/@34/swipe_up': KB_Letter_CRB
+      'keys/@35/swipe_up': KB_Letter_CRB
+      'keys/@36/swipe_up': KB_Letter_CRB
+      'keys/@37/swipe_up': KB_Letter_CRB
+      'keys/@38/swipe_up': KB_Letter_CRB
+      'keys/@39/swipe_up': KB_Letter_CRB
+      'keys/@40/swipe_up': KB_Letter_CRB
+      'keys/@41/swipe_up': KB_Letter_CRB
+      'keys/@42/swipe_up': KB_Letter_CRB
+      'keys/@43/swipe_up': KB_Letter_CRB
+      'keys/@44/swipe_up': KB_Letter_CRB
+      'keys/@45/swipe_up': KB_Letter_CRB
+      'keys/@46/swipe_up': KB_Letter_CRB
+      'keys/@47/swipe_up': KB_Letter_CRB
+      'keys/@48/swipe_up': KB_Letter_CRB
+      'keys/@49/swipe_up': KB_Letter_CRB
+      
+  0plsudt: &kpl_swipe_ud_t
+      'keys/@0/swipe_down':  K_Nothing
+      'keys/@1/swipe_down':  K_Nothing
+      'keys/@2/swipe_down':  K_Nothing
+      'keys/@3/swipe_down':  K_Nothing
+      'keys/@4/swipe_down':  K_Nothing
+      'keys/@5/swipe_down':  K_Nothing
+      'keys/@6/swipe_down':  K_Nothing
+      'keys/@7/swipe_down':  K_Nothing
+      'keys/@8/swipe_down':  K_Nothing
+      'keys/@9/swipe_down':  K_Nothing
+      'keys/@10/swipe_down': K_Nothing
+      'keys/@11/swipe_down': K_Nothing
+      'keys/@12/swipe_down': K_Nothing
+      'keys/@13/swipe_down': K_Nothing
+      'keys/@14/swipe_down': K_Nothing
+      'keys/@15/swipe_down': K_Nothing
+      'keys/@16/swipe_down': K_Nothing
+      'keys/@17/swipe_down': K_Nothing
+      'keys/@18/swipe_down': K_Nothing
+      'keys/@19/swipe_down': K_Nothing
+      'keys/@20/swipe_down': K_Nothing
+      'keys/@21/swipe_down': K_Nothing
+      'keys/@22/swipe_down': K_Nothing
+      'keys/@23/swipe_down': K_Nothing
+      'keys/@24/swipe_down': K_Nothing
+      'keys/@25/swipe_down': K_Nothing
+      'keys/@26/swipe_down': K_Nothing
+      'keys/@27/swipe_down': K_Nothing
+      'keys/@28/swipe_down': K_Nothing
+      'keys/@29/swipe_down': K_Nothing
+      'keys/@30/swipe_down': K_Nothing
+      'keys/@31/swipe_down': K_Nothing
+      'keys/@32/swipe_down': K_Nothing
+      'keys/@33/swipe_down': K_Nothing
+      'keys/@34/swipe_down': K_Nothing
+      'keys/@35/swipe_down': K_Nothing
+      'keys/@36/swipe_down': K_Nothing
+      'keys/@37/swipe_down': K_Nothing
+      'keys/@38/swipe_down': K_Nothing
+      'keys/@39/swipe_down': K_Nothing
+      'keys/@40/swipe_down': K_Nothing
+      'keys/@41/swipe_down': K_Nothing
+      'keys/@42/swipe_down': K_Nothing
+      'keys/@43/swipe_down': K_Nothing
+      'keys/@44/swipe_down': K_Nothing
+      'keys/@45/swipe_down': K_Nothing
+      'keys/@46/swipe_down': K_Nothing
+      'keys/@47/swipe_down': K_Nothing
+      'keys/@48/swipe_down': K_Nothing
+      'keys/@49/swipe_down': K_Nothing
+      'keys/@0/swipe_up':  KB_Letter
+      'keys/@1/swipe_up':  KB_Letter
+      'keys/@2/swipe_up':  KB_Letter
+      'keys/@3/swipe_up':  KB_Letter
+      'keys/@4/swipe_up':  KB_Letter
+      'keys/@5/swipe_up':  KB_Letter
+      'keys/@6/swipe_up':  KB_Letter
+      'keys/@7/swipe_up':  KB_Letter
+      'keys/@8/swipe_up':  KB_Letter
+      'keys/@9/swipe_up':  KB_Letter
+      'keys/@10/swipe_up': KB_Letter
+      'keys/@11/swipe_up': KB_Letter
+      'keys/@12/swipe_up': KB_Letter
+      'keys/@13/swipe_up': KB_Letter
+      'keys/@14/swipe_up': KB_Letter
+      'keys/@15/swipe_up': KB_Letter
+      'keys/@16/swipe_up': KB_Letter
+      'keys/@17/swipe_up': KB_Letter
+      'keys/@18/swipe_up': KB_Letter
+      'keys/@19/swipe_up': KB_Letter
+      'keys/@20/swipe_up': KB_Letter
+      'keys/@21/swipe_up': KB_Letter
+      'keys/@22/swipe_up': KB_Letter
+      'keys/@23/swipe_up': KB_Letter
+      'keys/@24/swipe_up': KB_Letter
+      'keys/@25/swipe_up': KB_Letter
+      'keys/@26/swipe_up': KB_Letter
+      'keys/@27/swipe_up': KB_Letter
+      'keys/@28/swipe_up': KB_Letter
+      'keys/@29/swipe_up': KB_Letter
+      'keys/@30/swipe_up': KB_Letter
+      'keys/@31/swipe_up': KB_Letter
+      'keys/@32/swipe_up': KB_Letter
+      'keys/@33/swipe_up': KB_Letter
+      'keys/@34/swipe_up': KB_Letter
+      'keys/@35/swipe_up': KB_Letter
+      'keys/@36/swipe_up': KB_Letter
+      'keys/@37/swipe_up': KB_Letter
+      'keys/@38/swipe_up': KB_Letter
+      'keys/@39/swipe_up': KB_Letter
+      'keys/@40/swipe_up': KB_Letter
+      'keys/@41/swipe_up': KB_Letter
+      'keys/@42/swipe_up': KB_Letter
+      'keys/@43/swipe_up': KB_Letter
+      'keys/@44/swipe_up': KB_Letter
+      'keys/@45/swipe_up': KB_Letter
+      'keys/@46/swipe_up': KB_Letter
+      'keys/@47/swipe_up': KB_Letter
+      'keys/@48/swipe_up': KB_Letter
+      'keys/@49/swipe_up': KB_Letter
+      
+  0plsudb: &kpl_swipe_ud_b
+      'keys/@0/swipe_down':  KB_Letter
+      'keys/@1/swipe_down':  KB_Letter
+      'keys/@2/swipe_down':  KB_Letter
+      'keys/@3/swipe_down':  KB_Letter
+      'keys/@4/swipe_down':  KB_Letter
+      'keys/@5/swipe_down':  KB_Letter
+      'keys/@6/swipe_down':  KB_Letter
+      'keys/@7/swipe_down':  KB_Letter
+      'keys/@8/swipe_down':  KB_Letter
+      'keys/@9/swipe_down':  KB_Letter
+      'keys/@10/swipe_down': KB_Letter
+      'keys/@11/swipe_down': KB_Letter
+      'keys/@12/swipe_down': KB_Letter
+      'keys/@13/swipe_down': KB_Letter
+      'keys/@14/swipe_down': KB_Letter
+      'keys/@15/swipe_down': KB_Letter
+      'keys/@16/swipe_down': KB_Letter
+      'keys/@17/swipe_down': KB_Letter
+      'keys/@18/swipe_down': KB_Letter
+      'keys/@19/swipe_down': KB_Letter
+      'keys/@20/swipe_down': KB_Letter
+      'keys/@21/swipe_down': KB_Letter
+      'keys/@22/swipe_down': KB_Letter
+      'keys/@23/swipe_down': KB_Letter
+      'keys/@24/swipe_down': KB_Letter
+      'keys/@25/swipe_down': KB_Letter
+      'keys/@26/swipe_down': KB_Letter
+      'keys/@27/swipe_down': KB_Letter
+      'keys/@28/swipe_down': KB_Letter
+      'keys/@29/swipe_down': KB_Letter
+      'keys/@30/swipe_down': KB_Letter
+      'keys/@31/swipe_down': KB_Letter
+      'keys/@32/swipe_down': KB_Letter
+      'keys/@33/swipe_down': KB_Letter
+      'keys/@34/swipe_down': KB_Letter
+      'keys/@35/swipe_down': KB_Letter
+      'keys/@36/swipe_down': KB_Letter
+      'keys/@37/swipe_down': KB_Letter
+      'keys/@38/swipe_down': KB_Letter
+      'keys/@39/swipe_down': KB_Letter
+      'keys/@40/swipe_down': KB_Letter
+      'keys/@41/swipe_down': KB_Letter
+      'keys/@42/swipe_down': KB_Letter
+      'keys/@43/swipe_down': KB_Letter
+      'keys/@44/swipe_down': KB_Letter
+      'keys/@45/swipe_down': KB_Letter
+      'keys/@46/swipe_down': KB_Letter
+      'keys/@47/swipe_down': KB_Letter
+      'keys/@48/swipe_down': KB_Letter
+      'keys/@49/swipe_down': KB_Letter
+      'keys/@0/swipe_up':  K_Nothing
+      'keys/@1/swipe_up':  K_Nothing
+      'keys/@2/swipe_up':  K_Nothing
+      'keys/@3/swipe_up':  K_Nothing
+      'keys/@4/swipe_up':  K_Nothing
+      'keys/@5/swipe_up':  K_Nothing
+      'keys/@6/swipe_up':  K_Nothing
+      'keys/@7/swipe_up':  K_Nothing
+      'keys/@8/swipe_up':  K_Nothing
+      'keys/@9/swipe_up':  K_Nothing
+      'keys/@10/swipe_up': K_Nothing
+      'keys/@11/swipe_up': K_Nothing
+      'keys/@12/swipe_up': K_Nothing
+      'keys/@13/swipe_up': K_Nothing
+      'keys/@14/swipe_up': K_Nothing
+      'keys/@15/swipe_up': K_Nothing
+      'keys/@16/swipe_up': K_Nothing
+      'keys/@17/swipe_up': K_Nothing
+      'keys/@18/swipe_up': K_Nothing
+      'keys/@19/swipe_up': K_Nothing
+      'keys/@20/swipe_up': K_Nothing
+      'keys/@21/swipe_up': K_Nothing
+      'keys/@22/swipe_up': K_Nothing
+      'keys/@23/swipe_up': K_Nothing
+      'keys/@24/swipe_up': K_Nothing
+      'keys/@25/swipe_up': K_Nothing
+      'keys/@26/swipe_up': K_Nothing
+      'keys/@27/swipe_up': K_Nothing
+      'keys/@28/swipe_up': K_Nothing
+      'keys/@29/swipe_up': K_Nothing
+      'keys/@30/swipe_up': K_Nothing
+      'keys/@31/swipe_up': K_Nothing
+      'keys/@32/swipe_up': K_Nothing
+      'keys/@33/swipe_up': K_Nothing
+      'keys/@34/swipe_up': K_Nothing
+      'keys/@35/swipe_up': K_Nothing
+      'keys/@36/swipe_up': K_Nothing
+      'keys/@37/swipe_up': K_Nothing
+      'keys/@38/swipe_up': K_Nothing
+      'keys/@39/swipe_up': K_Nothing
+      'keys/@40/swipe_up': K_Nothing
+      'keys/@41/swipe_up': K_Nothing
+      'keys/@42/swipe_up': K_Nothing
+      'keys/@43/swipe_up': K_Nothing
+      'keys/@44/swipe_up': K_Nothing
+      'keys/@45/swipe_up': K_Nothing
+      'keys/@46/swipe_up': K_Nothing
+      'keys/@47/swipe_up': K_Nothing
+      'keys/@48/swipe_up': K_Nothing
+      'keys/@49/swipe_up': K_Nothing
+
 # ———— 自定義按鍵 ————
 preset_keys:
   K_Space:            { send: space     ,repeatable: false ,functional: false }
@@ -393,11 +802,11 @@ preset_keys:
 
   K_Shift:     { send: Shift_L ,shift_lock: long ,label: '🡅'   ,preview: '​' }
   K_Shift_T:   { send: Shift_L ,shift_lock: long ,label: '變換' }
-  K_Enter:     { send: Return    ,label: '⮠'   ,preview: '​' }
-  K_Enter_T:   { send: Return    ,label: '回車' }
+  K_Enter:     { send: Return    ,label: '↩'   ,preview: '​' }
+  K_Enter_T:   { send: Return    ,label: '回車⮠' }
 
   K_Tab:       { send: Tab       ,label: '⭾' }
-  K_Escape:    { send: Escape    ,label: Esc }
+  K_Escape:    { send: Escape    ,label: Esc  }
   K_Hide:      { send: BACK      ,label: '﹀' ,preview: ' ' }
   K_Hide_S:    { send: BACK      ,label: '↧' ,preview: ' ' }
   K_Clear:     { send: Clear     ,label: 全清 }
@@ -435,9 +844,9 @@ preset_keys:
   K_FullStop_E:  { label: '​' ,text: "." ,preview: '.' }
   K_Slash_E:     { label: '​' ,text: "-" ,preview: '-' }  
   K_Underscore_E: { label: '​' ,text: "_" ,preview: '_' }
-  K_Space_Fake_Comma:     { send: space ,repeatable: false ,functional: false ,label: ',' ,preview: '​' } # zero-width space
-  K_Space_Fake_FullStop:  { send: space ,repeatable: false ,functional: false ,label: '.' ,preview: '​' }
-  K_Space_Fake_Slash:     { send: space ,repeatable: false ,functional: false ,label: '-' ,preview: '​' }
+  K_Space_Fake_Comma:      { send: space ,repeatable: false ,functional: false ,label: ',' ,preview: '​' } # zero-width space
+  K_Space_Fake_FullStop:   { send: space ,repeatable: false ,functional: false ,label: '.' ,preview: '​' }
+  K_Space_Fake_Slash:      { send: space ,repeatable: false ,functional: false ,label: '-' ,preview: '​' }
   K_Space_Fake_Underscore: { send: space ,repeatable: false ,functional: false ,label: '_' ,preview: '​' }
   K_Underscore_ASCII: { label: '_' ,text: '_' }
   K_LongDash: { label: '——' ,text: '——' }
@@ -445,7 +854,7 @@ preset_keys:
   K_Nothing: { label: ' ' }
 
   # 組合鍵 / Hotkeys
-  HK_SelectAll: { send: Control+a                ,label: '⧈'     }
+  HK_SelectAll: { send: Control+a                ,label: '⧈'      }
   HK_Cut:       { send: Control+x                ,label: '⎘'     }
   HL_CutAll:    { text: "{Control+a}{Control+x}" ,label: 全挪     }
   HK_Copy:      { send: Control+c                ,label: '🗐'     }
@@ -458,35 +867,35 @@ preset_keys:
   
   HK_DeleteWord:      { send: Control+BackSpace    ,label: 刪節 }
   HK_DeleteCandidate: { send: Control+Delete       ,label: 刪詞 }
-  HK_CtrlEnter:       { send: Control+Return       ,label: ' ' }
-  HK_ShiftEnter:      { send: Shift+Return         ,label: ' ' }
-  HK_CtrlShiftEnter:  { send: Control+Shift+Return ,label: ' ' }
+  HK_CtrlEnter:       { send: Control+Return       ,label: ' '  }
+  HK_ShiftEnter:      { send: Shift+Return         ,label: ' '  }
+  HK_CtrlShiftEnter:  { send: Control+Shift+Return ,label: ' '  }
   
   HK_SelectWord:  { text: '{Control+Left}{Shift+Control+Right}' ,label: '‹ɪ›' }
 
   # 特殊功能鍵 / Function Keys
   KB_Default:   { send: Eisu_toggle ,select: .default ,label: 返回 }
-  KB_Default_S: { send: Eisu_toggle ,select: .default ,label: KB }
-  KB_Default_E: { send: Eisu_toggle ,select: .default ,label: ' ' }
+  KB_Default_S: { send: Eisu_toggle ,select: .default ,label: KB   }
+  KB_Default_E: { send: Eisu_toggle ,select: .default ,label: ' '  }
   KB_Letter:    { send: Eisu_toggle ,select: default  ,label: 字母 ,preview: ' ' }
-  KB_Letter_S:  { send: Eisu_toggle ,select: default  ,label: ABC }
+  KB_Letter_S:  { send: Eisu_toggle ,select: default  ,label: ABC  }
   KB_Letter_NRT: { send: Eisu_toggle ,select: letter_NRT ,label: 字母頂數字行 ,preview: ' ' }
   KB_Letter_CRB: { send: Eisu_toggle ,select: letter_CRB ,label: 字母底控制行 ,preview: ' ' }
  
  
-  KB_Number:    { send: Eisu_toggle ,select: number   ,label: 數字 }
+  KB_Number:    { send: Eisu_toggle ,select: number   ,label: 數字  }
   KB_Number_S:  { send: Eisu_toggle ,select: number   ,label: "123" }
-  KB_Symbol:    { send: Eisu_toggle ,select: symbols  ,label: 符號 }
+  KB_Symbol:    { send: Eisu_toggle ,select: symbols  ,label: 符號  }
   KB_Symbol_S:  { send: Eisu_toggle ,select: symbols  ,label: "^&*" }
   KB_Controller:     { send: Eisu_toggle ,select: controller    ,label: "控制" }
-  KB_Controller_S:   { send: Eisu_toggle ,select: controller    ,label: "Ct" }
+  KB_Controller_S:   { send: Eisu_toggle ,select: controller    ,label: "Ct"   }
 
   SWI_Keyboard:    { send: Eisu_toggle      ,select: .next      ,label: 鍵盤 }
   SWI_Keyboard_L:  { send: Eisu_toggle      ,select: .last      ,label: 后退 }
   SWI_Keyboard_LL: { send: Eisu_toggle      ,select: .last_lock ,label: 返回 }
   SWI_Schema:      { send: Control+Shift+1 ,label: 下一方案 }
-  SWI_Schema_Eng:  { send: Control+Shift+0 ,label: Eng }
-  SWI_Color:       { send: PROG_RED        ,label: 配色 }
+  SWI_Schema_Eng:  { send: Control+Shift+0 ,label: Eng      }
+  SWI_Color:       { send: PROG_RED        ,label: 配色     }
   SWI_Candidate:   { toggle: _hide_candidate ,send: Mode_switch ,states: [有候選, 無候選] }
   SWI_Comment:     { toggle: _hide_comment   ,send: Mode_switch ,states: [有註釋, 無註釋] }
   SWI_Hint:        { toggle: _hide_key_hint  ,send: Mode_switch ,states: [有助記, 無助記] }
@@ -496,7 +905,7 @@ preset_keys:
   F_Menu:     { send: Menu                       ,label: 選單 }
   F_Menu_S:   { send: Menu                       ,label: "  " }
   F_Menu_E:   { send: Menu                       ,label: "  " }
-  F_Menu_F_Slash: { send: Menu                   ,label: '-' } # 設置long_click，label爲'-'，以防暗黑模式閃爍
+  F_Menu_F_Slash: { send: Menu                   ,label: '-'  } # 設置long_click，label爲'-'，以防暗黑模式閃爍
   F_Settings: { send: SETTINGS                   ,label: 設定 }
   F_Colors:   { send: SETTINGS ,option: "color"  ,label: 配色 }
   F_Themes:   { send: SETTINGS ,option: "theme"  ,label: 主題 }
@@ -620,8 +1029,8 @@ keyboard_components:
     - &K_g { __include: keybase/lr2 ,click: 'g' }
     - &K_h { __include: keybase/lr2 ,click: 'h' }
     - &K_j { __include: keybase/lr2 ,click: 'j' ,long_click: '~' }
-    - &K_k { __include: keybase/lr2 ,click: 'k' ,long_click: '?' }
-    - &K_l { __include: keybase/lr2 ,click: 'l' ,long_click: '!' }
+    - &K_k { __include: keybase/lr2 ,click: 'k' ,long_click: '!' }
+    - &K_l { __include: keybase/lr2 ,click: 'l' ,long_click: '?' }
     - &K5_Apost { width: 5 ,key_back_color: 0x00000000 ,click: "'" ,long_click: '"' }
     
     - { width: 100 ,height: *H_GAP }
@@ -636,7 +1045,7 @@ keyboard_components:
     - &K_n { __include: keybase/lr3 ,click: 'n' ,long_click: '\' }
     - &K_m { __include: keybase/lr3 ,click: 'm' ,long_click: '/' }
     - { width: 2 }
-    - &K_BS { __include: keybase/lkbs ,width: 13 ,key_text_size: 22 ,key_text_offset_y: -2 }
+    - &K_BS { __include: keybase/lkbs ,width: 13 ,key_text_size: 22 }
         
   0lmb: &kb_letter_middle_b
     keys/+:
@@ -761,7 +1170,7 @@ keyboard_components:
     - { width: 16.5 ,click: 2 }
     - { width: 16.5 ,click: 3 }
     - { width: 1.25 }
-    - { __include: keybase/lkbs ,width: 24 ,key_text_size: 22 ,key_text_offset_y: -2 }
+    - { __include: keybase/lkbs ,width: 24 ,key_text_size: 22 }
     
     - { width: 100 ,height: *H_GAP }
     
@@ -772,111 +1181,6 @@ keyboard_components:
     - { width: 16.5 ,click: '=' }
     - { width: 1.25 }
     - { __include: keybase/lket  ,width: 24 ,key_text_size: 20 ,key_text_offset_y: 2 }
-
-    
-    
-  0plslr: &kpl_swipe_lr
-      'keys/@0/swipe_left':  K_Left
-      'keys/@1/swipe_left':  K_Left
-      'keys/@2/swipe_left':  K_Left
-      'keys/@3/swipe_left':  K_Left
-      'keys/@4/swipe_left':  K_Left
-      'keys/@5/swipe_left':  K_Left
-      'keys/@6/swipe_left':  K_Left
-      'keys/@7/swipe_left':  K_Left
-      'keys/@8/swipe_left':  K_Left
-      'keys/@9/swipe_left':  K_Left
-      'keys/@10/swipe_left': K_Left
-      'keys/@11/swipe_left': K_Left
-      'keys/@12/swipe_left': K_Left
-      'keys/@13/swipe_left': K_Left
-      'keys/@14/swipe_left': K_Left
-      'keys/@15/swipe_left': K_Left
-      'keys/@16/swipe_left': K_Left
-      'keys/@17/swipe_left': K_Left
-      'keys/@18/swipe_left': K_Left
-      'keys/@19/swipe_left': K_Left
-      'keys/@20/swipe_left': K_Left
-      'keys/@21/swipe_left': K_Left
-      'keys/@22/swipe_left': K_Left
-      'keys/@23/swipe_left': K_Left
-      'keys/@24/swipe_left': K_Left
-      'keys/@25/swipe_left': K_Left
-      'keys/@26/swipe_left': K_Left
-      'keys/@27/swipe_left': K_Left
-      'keys/@28/swipe_left': K_Left
-      'keys/@29/swipe_left': K_Left
-      'keys/@30/swipe_left': K_Left
-      'keys/@31/swipe_left': K_Left
-      'keys/@32/swipe_left': K_Left
-      'keys/@33/swipe_left': K_Left
-      'keys/@34/swipe_left': K_Left
-      'keys/@35/swipe_left': K_Left
-      'keys/@36/swipe_left': K_Left
-      'keys/@37/swipe_left': K_Left
-      'keys/@38/swipe_left': K_Left
-      'keys/@39/swipe_left': K_Left
-      'keys/@40/swipe_left': K_Left
-      'keys/@41/swipe_left': K_Left
-      'keys/@42/swipe_left': K_Left
-      'keys/@43/swipe_left': K_Left
-      'keys/@44/swipe_left': K_Left
-      'keys/@45/swipe_left': K_Left
-      'keys/@46/swipe_left': K_Left
-      'keys/@47/swipe_left': K_Left
-      'keys/@48/swipe_left': K_Left
-      'keys/@49/swipe_left': K_Left
-      
-      'keys/@0/swipe_right':  K_Right
-      'keys/@1/swipe_right':  K_Right
-      'keys/@2/swipe_right':  K_Right
-      'keys/@3/swipe_right':  K_Right
-      'keys/@4/swipe_right':  K_Right
-      'keys/@5/swipe_right':  K_Right
-      'keys/@6/swipe_right':  K_Right
-      'keys/@7/swipe_right':  K_Right
-      'keys/@8/swipe_right':  K_Right
-      'keys/@9/swipe_right':  K_Right
-      'keys/@10/swipe_right': K_Right
-      'keys/@11/swipe_right': K_Right
-      'keys/@12/swipe_right': K_Right
-      'keys/@13/swipe_right': K_Right
-      'keys/@14/swipe_right': K_Right
-      'keys/@15/swipe_right': K_Right
-      'keys/@16/swipe_right': K_Right
-      'keys/@17/swipe_right': K_Right
-      'keys/@18/swipe_right': K_Right
-      'keys/@19/swipe_right': K_Right
-      'keys/@20/swipe_right': K_Right
-      'keys/@21/swipe_right': K_Right
-      'keys/@22/swipe_right': K_Right
-      'keys/@23/swipe_right': K_Right
-      'keys/@24/swipe_right': K_Right
-      'keys/@25/swipe_right': K_Right
-      'keys/@26/swipe_right': K_Right
-      'keys/@27/swipe_right': K_Right
-      'keys/@28/swipe_right': K_Right
-      'keys/@29/swipe_right': K_Right
-      'keys/@30/swipe_right': K_Right
-      'keys/@31/swipe_right': K_Right
-      'keys/@32/swipe_right': K_Right
-      'keys/@33/swipe_right': K_Right
-      'keys/@34/swipe_right': K_Right
-      'keys/@35/swipe_right': K_Right
-      'keys/@36/swipe_right': K_Right
-      'keys/@37/swipe_right': K_Right
-      'keys/@38/swipe_right': K_Right
-      'keys/@39/swipe_right': K_Right
-      'keys/@40/swipe_right': K_Right
-      'keys/@41/swipe_right': K_Right
-      'keys/@42/swipe_right': K_Right
-      'keys/@43/swipe_right': K_Right
-      'keys/@44/swipe_right': K_Right
-      'keys/@45/swipe_right': K_Right
-      'keys/@46/swipe_right': K_Right
-      'keys/@47/swipe_right': K_Right
-      'keys/@48/swipe_right': K_Right
-      'keys/@49/swipe_right': K_Right
       
 preset_keyboards:
   default:
@@ -893,109 +1197,8 @@ preset_keyboards:
     #- *kb_letter_middle_mod
     - *kb_letter_bottom
     - *kpl_swipe_lr
-    - 
-      'keys/@0/swipe_down':  KB_Letter_NRT
-      'keys/@1/swipe_down':  KB_Letter_NRT
-      'keys/@2/swipe_down':  KB_Letter_NRT
-      'keys/@3/swipe_down':  KB_Letter_NRT
-      'keys/@4/swipe_down':  KB_Letter_NRT
-      'keys/@5/swipe_down':  KB_Letter_NRT
-      'keys/@6/swipe_down':  KB_Letter_NRT
-      'keys/@7/swipe_down':  KB_Letter_NRT
-      'keys/@8/swipe_down':  KB_Letter_NRT
-      'keys/@9/swipe_down':  KB_Letter_NRT
-      'keys/@10/swipe_down': KB_Letter_NRT
-      'keys/@11/swipe_down': KB_Letter_NRT
-      'keys/@12/swipe_down': KB_Letter_NRT
-      'keys/@13/swipe_down': KB_Letter_NRT
-      'keys/@14/swipe_down': KB_Letter_NRT
-      'keys/@15/swipe_down': KB_Letter_NRT
-      'keys/@16/swipe_down': KB_Letter_NRT
-      'keys/@17/swipe_down': KB_Letter_NRT
-      'keys/@18/swipe_down': KB_Letter_NRT
-      'keys/@19/swipe_down': KB_Letter_NRT
-      'keys/@20/swipe_down': KB_Letter_NRT
-      'keys/@21/swipe_down': KB_Letter_NRT
-      'keys/@22/swipe_down': KB_Letter_NRT
-      'keys/@23/swipe_down': KB_Letter_NRT
-      'keys/@24/swipe_down': KB_Letter_NRT
-      'keys/@25/swipe_down': KB_Letter_NRT
-      'keys/@26/swipe_down': KB_Letter_NRT
-      'keys/@27/swipe_down': KB_Letter_NRT
-      'keys/@28/swipe_down': KB_Letter_NRT
-      'keys/@29/swipe_down': KB_Letter_NRT
-      'keys/@30/swipe_down': KB_Letter_NRT
-      'keys/@31/swipe_down': KB_Letter_NRT
-      'keys/@32/swipe_down': KB_Letter_NRT
-      'keys/@33/swipe_down': KB_Letter_NRT
-      'keys/@34/swipe_down': KB_Letter_NRT
-      'keys/@35/swipe_down': KB_Letter_NRT
-      'keys/@36/swipe_down': KB_Letter_NRT
-      'keys/@37/swipe_down': KB_Letter_NRT
-      'keys/@38/swipe_down': KB_Letter_NRT
-      'keys/@39/swipe_down': KB_Letter_NRT
-      'keys/@40/swipe_down': KB_Letter_NRT
-      'keys/@41/swipe_down': KB_Letter_NRT
-      'keys/@42/swipe_down': KB_Letter_NRT
-      'keys/@43/swipe_down': KB_Letter_NRT
-      'keys/@44/swipe_down': KB_Letter_NRT
-      'keys/@45/swipe_down': KB_Letter_NRT
-      'keys/@46/swipe_down': KB_Letter_NRT
-      'keys/@47/swipe_down': KB_Letter_NRT
-      'keys/@48/swipe_down': KB_Letter_NRT
-      'keys/@49/swipe_down': KB_Letter_NRT
+    - *kpl_swipe_ud_m
       
-      'keys/@0/swipe_up':  KB_Letter_CRB
-      'keys/@1/swipe_up':  KB_Letter_CRB
-      'keys/@2/swipe_up':  KB_Letter_CRB
-      'keys/@3/swipe_up':  KB_Letter_CRB
-      'keys/@4/swipe_up':  KB_Letter_CRB
-      'keys/@5/swipe_up':  KB_Letter_CRB
-      'keys/@6/swipe_up':  KB_Letter_CRB
-      'keys/@7/swipe_up':  KB_Letter_CRB
-      'keys/@8/swipe_up':  KB_Letter_CRB
-      'keys/@9/swipe_up':  KB_Letter_CRB
-      'keys/@10/swipe_up': KB_Letter_CRB
-      'keys/@11/swipe_up': KB_Letter_CRB
-      'keys/@12/swipe_up': KB_Letter_CRB
-      'keys/@13/swipe_up': KB_Letter_CRB
-      'keys/@14/swipe_up': KB_Letter_CRB
-      'keys/@15/swipe_up': KB_Letter_CRB
-      'keys/@16/swipe_up': KB_Letter_CRB
-      'keys/@17/swipe_up': KB_Letter_CRB
-      'keys/@18/swipe_up': KB_Letter_CRB
-      'keys/@19/swipe_up': KB_Letter_CRB
-      'keys/@20/swipe_up': KB_Letter_CRB
-      'keys/@21/swipe_up': KB_Letter_CRB
-      'keys/@22/swipe_up': KB_Letter_CRB
-      'keys/@23/swipe_up': KB_Letter_CRB
-      'keys/@24/swipe_up': KB_Letter_CRB
-      'keys/@25/swipe_up': KB_Letter_CRB
-      'keys/@26/swipe_up': KB_Letter_CRB
-      'keys/@27/swipe_up': KB_Letter_CRB
-      'keys/@28/swipe_up': KB_Letter_CRB
-      'keys/@29/swipe_up': KB_Letter_CRB
-      'keys/@30/swipe_up': KB_Letter_CRB
-      'keys/@31/swipe_up': KB_Letter_CRB
-      'keys/@32/swipe_up': KB_Letter_CRB
-      'keys/@33/swipe_up': KB_Letter_CRB
-      'keys/@34/swipe_up': KB_Letter_CRB
-      'keys/@35/swipe_up': KB_Letter_CRB
-      'keys/@36/swipe_up': KB_Letter_CRB
-      'keys/@37/swipe_up': KB_Letter_CRB
-      'keys/@38/swipe_up': KB_Letter_CRB
-      'keys/@39/swipe_up': KB_Letter_CRB
-      'keys/@40/swipe_up': KB_Letter_CRB
-      'keys/@41/swipe_up': KB_Letter_CRB
-      'keys/@42/swipe_up': KB_Letter_CRB
-      'keys/@43/swipe_up': KB_Letter_CRB
-      'keys/@44/swipe_up': KB_Letter_CRB
-      'keys/@45/swipe_up': KB_Letter_CRB
-      'keys/@46/swipe_up': KB_Letter_CRB
-      'keys/@47/swipe_up': KB_Letter_CRB
-      'keys/@48/swipe_up': KB_Letter_CRB
-      'keys/@49/swipe_up': KB_Letter_CRB
-
   letter_NRT:
     name: 主鍵盤 —— 頂部數字行
     __patch:
@@ -1005,109 +1208,8 @@ preset_keyboards:
     - *kb_letter_middle_b
     - *kb_letter_nrt_bottom
     - *kpl_swipe_lr
-    -
-      'keys/@0/swipe_down':  K_Nothing
-      'keys/@1/swipe_down':  K_Nothing
-      'keys/@2/swipe_down':  K_Nothing
-      'keys/@3/swipe_down':  K_Nothing
-      'keys/@4/swipe_down':  K_Nothing
-      'keys/@5/swipe_down':  K_Nothing
-      'keys/@6/swipe_down':  K_Nothing
-      'keys/@7/swipe_down':  K_Nothing
-      'keys/@8/swipe_down':  K_Nothing
-      'keys/@9/swipe_down':  K_Nothing
-      'keys/@10/swipe_down': K_Nothing
-      'keys/@11/swipe_down': K_Nothing
-      'keys/@12/swipe_down': K_Nothing
-      'keys/@13/swipe_down': K_Nothing
-      'keys/@14/swipe_down': K_Nothing
-      'keys/@15/swipe_down': K_Nothing
-      'keys/@16/swipe_down': K_Nothing
-      'keys/@17/swipe_down': K_Nothing
-      'keys/@18/swipe_down': K_Nothing
-      'keys/@19/swipe_down': K_Nothing
-      'keys/@20/swipe_down': K_Nothing
-      'keys/@21/swipe_down': K_Nothing
-      'keys/@22/swipe_down': K_Nothing
-      'keys/@23/swipe_down': K_Nothing
-      'keys/@24/swipe_down': K_Nothing
-      'keys/@25/swipe_down': K_Nothing
-      'keys/@26/swipe_down': K_Nothing
-      'keys/@27/swipe_down': K_Nothing
-      'keys/@28/swipe_down': K_Nothing
-      'keys/@29/swipe_down': K_Nothing
-      'keys/@30/swipe_down': K_Nothing
-      'keys/@31/swipe_down': K_Nothing
-      'keys/@32/swipe_down': K_Nothing
-      'keys/@33/swipe_down': K_Nothing
-      'keys/@34/swipe_down': K_Nothing
-      'keys/@35/swipe_down': K_Nothing
-      'keys/@36/swipe_down': K_Nothing
-      'keys/@37/swipe_down': K_Nothing
-      'keys/@38/swipe_down': K_Nothing
-      'keys/@39/swipe_down': K_Nothing
-      'keys/@40/swipe_down': K_Nothing
-      'keys/@41/swipe_down': K_Nothing
-      'keys/@42/swipe_down': K_Nothing
-      'keys/@43/swipe_down': K_Nothing
-      'keys/@44/swipe_down': K_Nothing
-      'keys/@45/swipe_down': K_Nothing
-      'keys/@46/swipe_down': K_Nothing
-      'keys/@47/swipe_down': K_Nothing
-      'keys/@48/swipe_down': K_Nothing
-      'keys/@49/swipe_down': K_Nothing
-    
-      'keys/@0/swipe_up':  KB_Letter
-      'keys/@1/swipe_up':  KB_Letter
-      'keys/@2/swipe_up':  KB_Letter
-      'keys/@3/swipe_up':  KB_Letter
-      'keys/@4/swipe_up':  KB_Letter
-      'keys/@5/swipe_up':  KB_Letter
-      'keys/@6/swipe_up':  KB_Letter
-      'keys/@7/swipe_up':  KB_Letter
-      'keys/@8/swipe_up':  KB_Letter
-      'keys/@9/swipe_up':  KB_Letter
-      'keys/@10/swipe_up': KB_Letter
-      'keys/@11/swipe_up': KB_Letter
-      'keys/@12/swipe_up': KB_Letter
-      'keys/@13/swipe_up': KB_Letter
-      'keys/@14/swipe_up': KB_Letter
-      'keys/@15/swipe_up': KB_Letter
-      'keys/@16/swipe_up': KB_Letter
-      'keys/@17/swipe_up': KB_Letter
-      'keys/@18/swipe_up': KB_Letter
-      'keys/@19/swipe_up': KB_Letter
-      'keys/@20/swipe_up': KB_Letter
-      'keys/@21/swipe_up': KB_Letter
-      'keys/@22/swipe_up': KB_Letter
-      'keys/@23/swipe_up': KB_Letter
-      'keys/@24/swipe_up': KB_Letter
-      'keys/@25/swipe_up': KB_Letter
-      'keys/@26/swipe_up': KB_Letter
-      'keys/@27/swipe_up': KB_Letter
-      'keys/@28/swipe_up': KB_Letter
-      'keys/@29/swipe_up': KB_Letter
-      'keys/@30/swipe_up': KB_Letter
-      'keys/@31/swipe_up': KB_Letter
-      'keys/@32/swipe_up': KB_Letter
-      'keys/@33/swipe_up': KB_Letter
-      'keys/@34/swipe_up': KB_Letter
-      'keys/@35/swipe_up': KB_Letter
-      'keys/@36/swipe_up': KB_Letter
-      'keys/@37/swipe_up': KB_Letter
-      'keys/@38/swipe_up': KB_Letter
-      'keys/@39/swipe_up': KB_Letter
-      'keys/@40/swipe_up': KB_Letter
-      'keys/@41/swipe_up': KB_Letter
-      'keys/@42/swipe_up': KB_Letter
-      'keys/@43/swipe_up': KB_Letter
-      'keys/@44/swipe_up': KB_Letter
-      'keys/@45/swipe_up': KB_Letter
-      'keys/@46/swipe_up': KB_Letter
-      'keys/@47/swipe_up': KB_Letter
-      'keys/@48/swipe_up': KB_Letter
-      'keys/@49/swipe_up': KB_Letter
-      
+    - *kpl_swipe_ud_t
+         
   letter_CRB:
     name: 主鍵盤 —— 底部控制行
     __patch:
@@ -1118,108 +1220,7 @@ preset_keyboards:
     - *kb_letter_bottom
     - *kb_letter_crb_bottom_extra
     - *kpl_swipe_lr
-    -
-      'keys/@0/swipe_down':  KB_Letter
-      'keys/@1/swipe_down':  KB_Letter
-      'keys/@2/swipe_down':  KB_Letter
-      'keys/@3/swipe_down':  KB_Letter
-      'keys/@4/swipe_down':  KB_Letter
-      'keys/@5/swipe_down':  KB_Letter
-      'keys/@6/swipe_down':  KB_Letter
-      'keys/@7/swipe_down':  KB_Letter
-      'keys/@8/swipe_down':  KB_Letter
-      'keys/@9/swipe_down':  KB_Letter
-      'keys/@10/swipe_down': KB_Letter
-      'keys/@11/swipe_down': KB_Letter
-      'keys/@12/swipe_down': KB_Letter
-      'keys/@13/swipe_down': KB_Letter
-      'keys/@14/swipe_down': KB_Letter
-      'keys/@15/swipe_down': KB_Letter
-      'keys/@16/swipe_down': KB_Letter
-      'keys/@17/swipe_down': KB_Letter
-      'keys/@18/swipe_down': KB_Letter
-      'keys/@19/swipe_down': KB_Letter
-      'keys/@20/swipe_down': KB_Letter
-      'keys/@21/swipe_down': KB_Letter
-      'keys/@22/swipe_down': KB_Letter
-      'keys/@23/swipe_down': KB_Letter
-      'keys/@24/swipe_down': KB_Letter
-      'keys/@25/swipe_down': KB_Letter
-      'keys/@26/swipe_down': KB_Letter
-      'keys/@27/swipe_down': KB_Letter
-      'keys/@28/swipe_down': KB_Letter
-      'keys/@29/swipe_down': KB_Letter
-      'keys/@30/swipe_down': KB_Letter
-      'keys/@31/swipe_down': KB_Letter
-      'keys/@32/swipe_down': KB_Letter
-      'keys/@33/swipe_down': KB_Letter
-      'keys/@34/swipe_down': KB_Letter
-      'keys/@35/swipe_down': KB_Letter
-      'keys/@36/swipe_down': KB_Letter
-      'keys/@37/swipe_down': KB_Letter
-      'keys/@38/swipe_down': KB_Letter
-      'keys/@39/swipe_down': KB_Letter
-      'keys/@40/swipe_down': KB_Letter
-      'keys/@41/swipe_down': KB_Letter
-      'keys/@42/swipe_down': KB_Letter
-      'keys/@43/swipe_down': KB_Letter
-      'keys/@44/swipe_down': KB_Letter
-      'keys/@45/swipe_down': KB_Letter
-      'keys/@46/swipe_down': KB_Letter
-      'keys/@47/swipe_down': KB_Letter
-      'keys/@48/swipe_down': KB_Letter
-      'keys/@49/swipe_down': KB_Letter
-      
-      'keys/@0/swipe_up':  K_Nothing
-      'keys/@1/swipe_up':  K_Nothing
-      'keys/@2/swipe_up':  K_Nothing
-      'keys/@3/swipe_up':  K_Nothing
-      'keys/@4/swipe_up':  K_Nothing
-      'keys/@5/swipe_up':  K_Nothing
-      'keys/@6/swipe_up':  K_Nothing
-      'keys/@7/swipe_up':  K_Nothing
-      'keys/@8/swipe_up':  K_Nothing
-      'keys/@9/swipe_up':  K_Nothing
-      'keys/@10/swipe_up': K_Nothing
-      'keys/@11/swipe_up': K_Nothing
-      'keys/@12/swipe_up': K_Nothing
-      'keys/@13/swipe_up': K_Nothing
-      'keys/@14/swipe_up': K_Nothing
-      'keys/@15/swipe_up': K_Nothing
-      'keys/@16/swipe_up': K_Nothing
-      'keys/@17/swipe_up': K_Nothing
-      'keys/@18/swipe_up': K_Nothing
-      'keys/@19/swipe_up': K_Nothing
-      'keys/@20/swipe_up': K_Nothing
-      'keys/@21/swipe_up': K_Nothing
-      'keys/@22/swipe_up': K_Nothing
-      'keys/@23/swipe_up': K_Nothing
-      'keys/@24/swipe_up': K_Nothing
-      'keys/@25/swipe_up': K_Nothing
-      'keys/@26/swipe_up': K_Nothing
-      'keys/@27/swipe_up': K_Nothing
-      'keys/@28/swipe_up': K_Nothing
-      'keys/@29/swipe_up': K_Nothing
-      'keys/@30/swipe_up': K_Nothing
-      'keys/@31/swipe_up': K_Nothing
-      'keys/@32/swipe_up': K_Nothing
-      'keys/@33/swipe_up': K_Nothing
-      'keys/@34/swipe_up': K_Nothing
-      'keys/@35/swipe_up': K_Nothing
-      'keys/@36/swipe_up': K_Nothing
-      'keys/@37/swipe_up': K_Nothing
-      'keys/@38/swipe_up': K_Nothing
-      'keys/@39/swipe_up': K_Nothing
-      'keys/@40/swipe_up': K_Nothing
-      'keys/@41/swipe_up': K_Nothing
-      'keys/@42/swipe_up': K_Nothing
-      'keys/@43/swipe_up': K_Nothing
-      'keys/@44/swipe_up': K_Nothing
-      'keys/@45/swipe_up': K_Nothing
-      'keys/@46/swipe_up': K_Nothing
-      'keys/@47/swipe_up': K_Nothing
-      'keys/@48/swipe_up': K_Nothing
-      'keys/@49/swipe_up': K_Nothing
+    - *kpl_swipe_ud_b 
         
   number:
     name: 副鍵盤：數字頁
@@ -1268,7 +1269,7 @@ preset_keyboards:
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Apost_RD ,width: 12 ,label: '‘ ’' }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QotMk_RD ,width: 12 ,label: '“ ”' }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
-    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 ,key_text_offset_y: -2 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 }
    
     - { width: 100 ,height: *H_GAP }
    
@@ -1323,7 +1324,7 @@ preset_keyboards:
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Apost_RD ,width: 12 ,label: '‘ ’' }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QotMk_RD ,width: 12 ,label: '“ ”' }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
-    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 ,key_text_offset_y: -2 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 }
 
     - { width: 100 ,height: *H_GAP }
 
@@ -1349,7 +1350,7 @@ preset_keyboards:
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_Apost_RD ,width: 12 ,label: '‘ ’' }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_H3 ,hilited_key_back_color: CHT_H3 ,key_text_color: CLT_H3 ,click: K_QotMk_RD ,width: 12 ,label: '“ ”' }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down                                                                                 ,width: 1 }
-    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 ,key_text_offset_y: -2 }
+    - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_BS ,hilited_key_back_color: CHT_BS ,key_text_color: CLT_BS ,width: 13 ,click: K_Backspace ,key_text_size: 22 }
 
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,width: 15 ,click: KB_Default }
     - { swipe_left: K_Left, swipe_right: K_Right, swipe_up: K_Up, swipe_down: K_Down ,key_back_color: CLB_FN ,hilited_key_back_color: CLB_FN ,key_text_color: CLT_FN ,click: K_Hide_S, long_click: F_Menu_E }
@@ -1362,5 +1363,4 @@ preset_keyboards:
     __include: /preset_keyboards/default
   qwerty:
     __include: /preset_keyboards/default
-    
- 
+  
