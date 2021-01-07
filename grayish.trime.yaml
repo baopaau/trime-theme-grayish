@@ -1,7 +1,8 @@
 # Trime custom style settings
 # encoding: utf-8
+# https://github.com/baopaau/trime-theme-grayish/blob/master/grayish.trime.yaml
 
-config_version: "1.1"
+config_version: "1.2"
 name: 小灰灰
 author: 抱豹 <baopaau@gmail.com>
 # 黑白自適應配色方案，適配安卓10暗黑模式
@@ -28,20 +29,20 @@ style:
   vertical_correction:   -10         # 觸控縱向修正
   
   # 字型／Fonts
-  hanb_font:             TH-SiuNiu-Bold.ttf   # 擴充字型
+  hanb_font:             sarasa-gothic-k-regular.ttf   # 擴充字型
 
-  key_font:              TH-SiuNiu-Bold.ttf   # 鍵盤字型
-  latin_font:            TH-SiuNiu-Bold.ttf   # 鍵盤西文字型
-  symbol_font:           TH-SiuNiu-Bold.ttf   # 鍵盤助記字型
+  key_font:              sarasa-gothic-k-regular.ttf   # 鍵盤字型
+  latin_font:            sarasa-gothic-k-regular.ttf   # 鍵盤西文字型
+  symbol_font:           sarasa-gothic-k-regular.ttf   # 鍵盤助記字型
 
-  candidate_font:        TH-SiuNiu-Bold.ttf   # 候選項字型
-  comment_font:          TH-SiuNiu-Bold.ttf   # 候選項注釋字型
+  candidate_font:        sarasa-gothic-k-regular.ttf   # 候選項字型
+  comment_font:          sarasa-gothic-k-regular.ttf   # 候選項注釋字型
 
-  text_font:             TH-SiuNiu-Bold.ttf   # 浮窗編碼區字型
+  text_font:             sarasa-gothic-k-regular.ttf   # 浮窗編碼區字型
 
-  preview_font:          TH-SiuNiu-Bold.ttf   # 按鍵氣泡字型
+  preview_font:          sarasa-gothic-k-regular.ttf   # 按鍵氣泡字型
 
-  label_font:            TH-SiuNiu-Bold.ttf   # 標籤字型？
+  label_font:            sarasa-gothic-k-regular.ttf   # 標籤字型？
 
   
   # 排版參數／Length
@@ -69,7 +70,7 @@ style:
   # 字號／Text Size
   key_text_size:         22          # 按鍵文字，字號
   key_long_text_size:    14          # 按鍵文字，字號：長文本
-  symbol_text_size:      10          # 按鍵助記文字，字號
+  symbol_text_size:      8           # 按鍵助記文字，字號
 
   candidate_text_size:   22          # 候選區文字，字號
   comment_text_size:     12          # 候選區注釋文字，字號
@@ -119,16 +120,6 @@ style:
     - number
     - symbols
     - controller
-  
-
-# ———— 配色 ————
-colors:
-  1: &C_Clouds       0xfdfdfd
-  2: &C_Silver       0xeceff1
-  3: &C_Concrete     0xd3d7da
-  4: &C_Asbestos     0x9ea7aa
-  5: &C_WetAsphalt   0x808080
-  6: &C_MidnightBlue 0x646464
 
 # ———— 配色替補關係 ————
 fallback_colors:
@@ -169,40 +160,40 @@ preset_color_schemes:
     name: 預設／DEFAULT
     author: Baopaau
 
-    keyboard_back_color:          *C_Clouds        # 鍵盤背景
+    keyboard_back_color:          0xfffdfdfd         # 鍵盤背景
     key_back_color:               0x1d93979a       # 按鍵背景
-    hilited_key_back_color:       *C_Concrete      # 按鍵背景：按下
+    hilited_key_back_color:       0xffd3d7da      # 按鍵背景：按下
     off_key_back_color:           0x3893979a       # 按鍵背景：功能鍵：未激活
     hilited_off_key_back_color:   0xb893979a       # 按鍵背景：功能鍵：未激活：按下
     on_key_back_color:            0x9263676a       # 按鍵背景：功能鍵：已激活
     hilited_on_key_back_color:    0x5893979a       # 按鍵背景：功能鍵：已激活：按下
 
-    key_text_color:               *C_WetAsphalt    # 按鍵文字
-    hilited_key_text_color:       *C_MidnightBlue  # 按鍵文字：按下
-    off_key_text_color:           *C_MidnightBlue  # 按鍵文字：功能鍵：未激活
-    hilited_off_key_text_color:   *C_MidnightBlue  # 按鍵文字：功能鍵：未激活：按下
+    key_text_color:               0xff808080    # 按鍵文字
+    hilited_key_text_color:       0xff646464  # 按鍵文字：按下
+    off_key_text_color:           0xff646464  # 按鍵文字：功能鍵：未激活
+    hilited_off_key_text_color:   0xff646464  # 按鍵文字：功能鍵：未激活：按下
     on_key_text_color:            0xa0ffffff       # 按鍵文字：功能鍵：已激活
-    hilited_on_key_text_color:    *C_MidnightBlue  # 按鍵文字：功能鍵：已激活：按下
-    key_symbol_color:             *C_MidnightBlue  # 按鍵助記文字
-    hilited_key_symbol_color:     *C_MidnightBlue  # 按鍵助記文字：按下
+    hilited_on_key_text_color:    0xff646464  # 按鍵文字：功能鍵：已激活：按下
+    key_symbol_color:             0x80808080       # 按鍵助記文字
+    hilited_key_symbol_color:     0xff646464  # 按鍵助記文字：按下
 
     back_color:                   0xffecedef       # 候選區背景，暨浮窗編碼器錯誤高亮色，後者不受暗黑模式影響，但透明度會同時影響兩者
-    hilited_candidate_back_color: *C_Concrete      # 候選區背景：選中
+    hilited_candidate_back_color: 0xffd3d7da       # 候選區背景：選中
     candidate_separator_color:    0xffd3d7da       # 候選區分割條
 
-    candidate_text_color:         *C_MidnightBlue  # 候選區文字
-    hilited_candidate_text_color: *C_MidnightBlue  # 候選區文字：選中
-    comment_text_color:           *C_WetAsphalt    # 候選區注釋文字
-    hilited_comment_text_color:   *C_WetAsphalt    # 候選區注釋文字：選中
+    candidate_text_color:         0xff646464  # 候選區文字
+    hilited_candidate_text_color: 0xff646464  # 候選區文字：選中
+    comment_text_color:           0xff808080    # 候選區注釋文字
+    hilited_comment_text_color:   0xff808080    # 候選區注釋文字：選中
 
     text_back_color:              0x00ffffff       # 浮窗編碼區背景（可能沒用）
     hilited_back_color:           0x00ffffff       # 浮窗編碼區背景：選中
     
-    text_color:                   0x868686         # 浮窗編碼區文字
-    hilited_text_color:           0x424242         # 浮窗編碼區文字：選中
+    text_color:                   0xff868686         # 浮窗編碼區文字
+    hilited_text_color:           0xff424242         # 浮窗編碼區文字：選中
 
     preview_back_color:           0x00d1d2d3       # 按鍵彈出氣泡背景
-    preview_text_color:           *C_MidnightBlue  # 按鍵彈出氣泡文字
+    preview_text_color:           0xff646464     # 按鍵彈出氣泡文字
 
     shadow_color:         0x000000    # 全局文字陰影
     label_color:          0x123456    # 標籤（我也不知道這是什麽）
@@ -346,11 +337,11 @@ android_keys:
     # key_press_offset_x:  2 #按下時偏移，會叠加於symbol、text和hint，預設0
     # key_press_offset_y:  2
     # key_symbol_offset_x: 0
-    # key_symbol_offset_y: 0
+    # key_symbol_offset_y: 2
     # key_text_offset_x:   0
     # key_text_offset_y:   0
     # key_hint_offset_x:   0
-    # key_hint_offset_y:   0
+    # key_hint_offset_y:   -2
     
     # pressed: true|false
     # on: true|false
@@ -941,6 +932,8 @@ keybase:
     __include: keybase/lr1
   lr3:
     __include: keybase/lr1
+  lr4:
+    __include: keybase/lr1
   lkbs:
     click: K_Backspace
     key_back_color: CLB_BS
@@ -988,8 +981,8 @@ keyboard_components:
     ascii_mode: 0
     # ascii_keyboard: ""
     # lock: false
-    # columns: 10 # 超過則換行，整數，預設30，設為-1即無限
-    # width: 10 # 單位屏幕寬度百分比
+    # columns: -1 # 超過則換行，整數，預設30，設為-1即無限
+    width: 10 # 單位屏幕寬度百分比
     # height: 44 # 單位像素px
     # horizontal_gap: 
     # vertical_gap:
@@ -997,69 +990,76 @@ keyboard_components:
     # keyboard_back_color:
     # key_press_offset_x: 2 #按下時偏移，會叠加於symbol、text和hint，預設0
     # key_press_offset_y: 2
-    # key_symbol_offset_x: 0
-    # key_symbol_offset_y: 0
+    #key_symbol_offset_x: 3
+    key_symbol_offset_y: -2
     # key_text_offset_x: 0
-    # key_text_offset_y: 0
-    # key_hint_offset_x: 0
-    # key_hint_offset_y: 0
+    key_text_offset_y: -1
+    #key_hint_offset_x: -3
+    key_hint_offset_y: 1
     
     keys: []
     
   0lm: &kb_letter_middle
     keys/+:
-    - &K_q { __include: keybase/lr1 ,click: 'q' ,long_click: K_Tab }
-    - &K_w { __include: keybase/lr1 ,click: 'w' ,long_click: '+' }
-    - &K_e { __include: keybase/lr1 ,click: 'e' ,long_click: '=' }
-    - &K_r { __include: keybase/lr1 ,click: 'r' ,long_click: '{' }
-    - &K_t { __include: keybase/lr1 ,click: 't' ,long_click: '}' }
-    - &K_y { __include: keybase/lr1 ,click: 'y' ,long_click: HK_Redo }
-    - &K_u { __include: keybase/lr1 ,click: 'u' ,long_click: '<' }
-    - &K_i { __include: keybase/lr1 ,click: 'i' ,long_click: '>' }
-    - &K_o { __include: keybase/lr1 ,click: 'o' ,long_click: '[' }
-    - &K_p { __include: keybase/lr1 ,click: 'p' ,long_click: ']' }
-    
+    - { width: 1.3 }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'q' ,long_click: K_Tab }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'w' ,long_click: '+' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'e' ,long_click: '=' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'r' ,long_click: '{' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 't' ,long_click: '}' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'y' ,long_click: HK_Redo }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'u' ,long_click: '<' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'i' ,long_click: '>' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'o' ,long_click: '[' }
+    - { width: 9.8 ,__include: keybase/lr1 ,click: 'p' ,long_click: ']' }
+    - { width: 0.7 }
+
     - { width: 100 ,height: *H_GAP }
-    
-    - &K5_Colon { width: 5 ,key_back_color: 0x00000000 ,click: ':' ,long_click: ';' }
-    - &K_a { __include: keybase/lr2 ,click: 'a' ,long_click: HK_SelectAll }
-    - &K_s { __include: keybase/lr2 ,click: 's' ,long_click: HK_SelectWord }
-    - &K_d { __include: keybase/lr2 ,click: 'd' ,long_click: '`' }
-    - &K_f { __include: keybase/lr2 ,click: 'f' }
-    - &K_g { __include: keybase/lr2 ,click: 'g' }
-    - &K_h { __include: keybase/lr2 ,click: 'h' }
-    - &K_j { __include: keybase/lr2 ,click: 'j' ,long_click: '~' }
-    - &K_k { __include: keybase/lr2 ,click: 'k' ,long_click: '!' }
-    - &K_l { __include: keybase/lr2 ,click: 'l' ,long_click: '?' }
-    - &K5_Apost { width: 5 ,key_back_color: 0x00000000 ,click: "'" ,long_click: '"' }
-    
-    - { width: 100 ,height: *H_GAP }
-    
-    - &K_SF { width: 13 ,click: K_Shift ,send_bindings: false ,key_text_size: 24 }
-    - { width: 2}
-    - &K_z { __include: keybase/lr3 ,click: 'z' ,long_click: HK_Undo }
-    - &K_x { __include: keybase/lr3 ,click: 'x' ,long_click: HK_Cut }
-    - &K_c { __include: keybase/lr3 ,click: 'c' ,long_click: HK_Copy }
-    - &K_v { __include: keybase/lr3 ,click: 'v' ,long_click: HK_Paste }
-    - &K_b { __include: keybase/lr3 ,click: 'b' ,long_click: '|'}
-    - &K_n { __include: keybase/lr3 ,click: 'n' ,long_click: '\' }
-    - &K_m { __include: keybase/lr3 ,click: 'm' ,long_click: '/' }
+
+    - { width: 1.3 ,click: ':' ,long_click: ';' ,key_back_color: 0x00000000 ,key_text_color: 0x00000000 ,key_symbol_color: 0x00000000 }
+    - { width: 4.9 ,click: ':' ,long_click: ';' ,key_back_color: 0x00000000 }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'a' ,long_click: HK_SelectAll }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 's' ,long_click: HK_SelectWord }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'd' ,long_click: '`' }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'f' }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'g' }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'h' }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'j' ,long_click: '~' }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'k' ,long_click: '!' }
+    - { width: 9.8 ,__include: keybase/lr2 ,click: 'l' ,long_click: '?' }
+    - { width: 4.9  ,click: "'" ,long_click: '"' ,key_back_color: 0x00000000 }
+    - { width: 0.7  ,click: "'" ,long_click: '"' ,key_back_color: 0x00000000 ,key_text_color: 0x00000000 ,key_symbol_color: 0x00000000 }
+
+    - { width:  100 ,height: *H_GAP }
+
+    - { width: 1.3 }
+    - { width: 12.7 ,click: K_Shift ,send_bindings: false ,key_text_size: 24 }
     - { width: 2 }
-    - &K_BS { __include: keybase/lkbs ,width: 13 ,key_text_size: 22 }
-        
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'z' ,long_click: HK_Undo }
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'x' ,long_click: HK_Cut }
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'c' ,long_click: HK_Copy }
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'v' ,long_click: HK_Paste }
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'b' ,long_click: '|'}
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'n' ,long_click: '\' }
+    - { width: 9.8 ,__include: keybase/lr3 ,click: 'm' ,long_click: '/' }
+    - { width: 2 }
+    - { width: 12.7 ,__include: keybase/lkbs ,key_text_size: 22 }
+    - { width: 0.7 }
+
   0lmb: &kb_letter_middle_b
     keys/+:
     - { width: 100 ,height: *H_GAP }
     
-    - &K15_SKB_Number { __include: keybase/lkfn  ,width: 15 ,click: KB_Number_S }
-    - &K10_SKB_FN     { __include: keybase/lkfn  ,click: K_Hide_S, long_click: F_Menu_S }
-    - &K50_SP_1of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_Slash      ,long_click: K_Slash_E      }
-    - &K50_SP_2of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_Underscore ,long_click: K_Underscore_E }
-    - &K50_SP_3of5    { __include: keybase/lksp  ,width: 22 ,click: K_Space_NoPreview       ,long_click: F_Menu_E       }
-    - &K50_SP_4of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_Comma      ,long_click: K_Comma_E      }
-    - &K50_SP_5of5    { __include: keybase/lkspb ,width: 7  ,click: K_Space_Fake_FullStop   ,long_click: K_FullStop_E   }
-    - &K25_Enter      { __include: keybase/lket  ,width: 25 ,key_text_size: 20 ,key_text_offset_y: 2 }
-
+    - { width: 1.3 }
+    - { width: 10.85 ,__include: keybase/lkfn  ,click: KB_Number_S }
+    - { width: 10.85 ,__include: keybase/lkfn  ,click: K_Hide_S, long_click: F_Menu_S }
+    - { width: 2 }
+    - { width: 10.5 ,__include: keybase/lr4 ,click: ',' ,long_click: '-' }
+    - { width: 29.6 ,__include: keybase/lksp ,click: K_Space_NoPreview ,long_click: F_Menu_E }
+    - { width: 10.5 ,__include: keybase/lr4 ,click: '.' ,long_click: '_' }
+    - { width: 2 }
+    - { width: 21.7 ,__include: keybase/lket  ,key_text_size: 20 ,key_text_offset_y: 2 }
+    - { width: 0.7 }
   
   0lmm: &kb_letter_middle_mod
     'keys/@last/key_back_color':  0xff808080
@@ -1070,9 +1070,11 @@ keyboard_components:
     keys/+:
     - { width: 100 ,height: 4 }
     
+
     - { width: 19 ,height: *H_BAR }
     - { width: 62 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x20808080 }
     - { width: 19 ,height: *H_BAR }
+
     
     - { width: 100 ,height: *H_GAP }
  
@@ -1080,9 +1082,11 @@ keyboard_components:
     keys/+: 
     - { width: 100 ,height: 2 }
     
+
     - { width: 25 ,height: *H_BAR }
     - { width: 50 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x10808080 }
     - { width: 25 ,height: *H_BAR }
+
     
     - { width: 100 ,height: 4 }
     
@@ -1090,6 +1094,7 @@ keyboard_components:
     keys/+:
     - { width: 100 ,height: 6 }
         
+
     - { __include: keybase/lrnt ,click: '1' ,long_click: '!' }
     - { __include: keybase/lrnt ,click: '2' ,long_click: '@' }
     - { __include: keybase/lrnt ,click: '3' ,long_click: '#' }
@@ -1101,15 +1106,18 @@ keyboard_components:
     - { __include: keybase/lrnt ,click: '9' ,long_click: '(' }
     - { __include: keybase/lrnt ,click: '0' ,long_click: ')' }
 
+
     - { width: 100 ,height: 5 }
     
   0lnrtb: &kb_letter_nrt_bottom
     keys/+: 
     - { width: 100 ,height: 2 }
     
+
     - { width: 25 ,height: *H_BAR }
     - { width: 50 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x18808080 }
     - { width: 25 ,height: *H_BAR }
+
     
     - { width: 100 ,height: 4 }
     
@@ -1117,21 +1125,25 @@ keyboard_components:
     keys/+:
     - { width: 100 ,height: 4 }
     
+
     - { width: 19 ,height: *H_BAR }
     - { width: 62 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x10808080 }
     - { width: 19 ,height: *H_BAR }
+
     
     - { width: 100 ,height: *H_GAP }
     
   0lcrbb: &kb_letter_crb_bottom_extra
     0hcrb: &H_CRB 28
     keys/+:
+
     - { width: 25   ,height: *H_CRB }
     - { width: 12.5 ,height: *H_CRB ,click: K_Left_R  ,key_back_color: 0x10808080 }
     - { width: 12.5 ,height: *H_CRB ,click: K_Down_R  ,key_back_color: 0x10808080 }
     - { width: 12.5 ,height: *H_CRB ,click: K_Up_R    ,key_back_color: 0x10808080 }
     - { width: 12.5 ,height: *H_CRB ,click: K_Right_R ,key_back_color: 0x10808080 }
     - { width: 25   ,height: *H_CRB }
+
     
     - { width: 100 ,height: *H_GAP }
     
@@ -1139,6 +1151,7 @@ keyboard_components:
     keys/+:
     - { width: 100 ,height: *H_GAP }
     
+
     - { width: 12 ,click: '[' }
     - { width: 12 ,click: ']' }
     - { width: 1.25 }
@@ -1148,9 +1161,11 @@ keyboard_components:
     - { width: 1.25 }
     - { width: 12 ,click: '+' }
     - { width: 12 ,click: '*' }
+
     
     - { width: 100 ,height: *H_GAP }
     
+
     - { width: 12 ,click: '(' }
     - { width: 12 ,click: ')' }
     - { width: 1.25 }
@@ -1160,9 +1175,11 @@ keyboard_components:
     - { width: 1.25 }
     - { width: 12 ,click: '-' }
     - { width: 12 ,click: '/' }
+
     
     - { width: 100 ,height: *H_GAP }
     
+
     - { width: 12 ,click: '^' }
     - { width: 12 ,click: '%' }
     - { width: 1.25 }
@@ -1174,6 +1191,7 @@ keyboard_components:
     
     - { width: 100 ,height: *H_GAP }
     
+
     - { __include: keybase/lkfn  ,width: 24 ,click: KB_Letter_S }
     - { width: 1.25 }
     - { width: 16.5 ,click: 0 }
@@ -1181,6 +1199,7 @@ keyboard_components:
     - { width: 16.5 ,click: '=' }
     - { width: 1.25 }
     - { __include: keybase/lket  ,width: 24 ,key_text_size: 20 ,key_text_offset_y: 2 }
+
       
 preset_keyboards:
   default:
@@ -1364,3 +1383,35 @@ preset_keyboards:
   qwerty:
     __include: /preset_keyboards/default
   
+  qwerty__:
+    __include: /preset_keyboards/default
+    __patch:
+      keys/@5/hint: 手
+      keys/@6/hint: 田
+      keys/@7/hint: 水
+      keys/@8/hint: 口
+      keys/@9/hint: 廿
+      keys/@10/hint: 卜
+      keys/@11/hint: 山
+      keys/@12/hint: 戈
+      keys/@13/hint: 人
+      keys/@14/hint: 心
+        
+      keys/@17/hint: 日
+      keys/@18/hint: 尸
+      keys/@19/hint: 木
+      keys/@20/hint: 火
+      keys/@21/hint: 土
+      keys/@22/hint: 的
+      keys/@23/hint: 十
+      keys/@24/hint: 大
+      keys/@25/hint: 中
+        
+      keys/@30/hint: 片
+      keys/@31/hint: 止
+      keys/@32/hint: 金
+      keys/@33/hint: 女
+      keys/@34/hint: 月
+      keys/@35/hint: 弓
+      keys/@36/hint: 一
+      
