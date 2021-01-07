@@ -2,7 +2,7 @@
 # encoding: utf-8
 # https://github.com/baopaau/trime-theme-grayish/blob/master/grayish.trime.yaml
 
-config_version: "1.2"
+config_version: "1.6"
 name: 小灰灰
 author: 抱豹 <baopaau@gmail.com>
 # 黑白自適應配色方案，適配安卓10暗黑模式
@@ -477,6 +477,106 @@ swipe_actions:
       'keys/@47/swipe_right': K_Right
       'keys/@48/swipe_right': K_Right
       'keys/@49/swipe_right': K_Right
+      'keys/@0/swipe_down':  K_Down
+      'keys/@1/swipe_down':  K_Down
+      'keys/@2/swipe_down':  K_Down
+      'keys/@3/swipe_down':  K_Down
+      'keys/@4/swipe_down':  K_Down
+      'keys/@5/swipe_down':  K_Down
+      'keys/@6/swipe_down':  K_Down
+      'keys/@7/swipe_down':  K_Down
+      'keys/@8/swipe_down':  K_Down
+      'keys/@9/swipe_down':  K_Down
+      'keys/@10/swipe_down': K_Down
+      'keys/@11/swipe_down': K_Down
+      'keys/@12/swipe_down': K_Down
+      'keys/@13/swipe_down': K_Down
+      'keys/@14/swipe_down': K_Down
+      'keys/@15/swipe_down': K_Down
+      'keys/@16/swipe_down': K_Down
+      'keys/@17/swipe_down': K_Down
+      'keys/@18/swipe_down': K_Down
+      'keys/@19/swipe_down': K_Down
+      'keys/@20/swipe_down': K_Down
+      'keys/@21/swipe_down': K_Down
+      'keys/@22/swipe_down': K_Down
+      'keys/@23/swipe_down': K_Down
+      'keys/@24/swipe_down': K_Down
+      'keys/@25/swipe_down': K_Down
+      'keys/@26/swipe_down': K_Down
+      'keys/@27/swipe_down': K_Down
+      'keys/@28/swipe_down': K_Down
+      'keys/@29/swipe_down': K_Down
+      'keys/@30/swipe_down': K_Down
+      'keys/@31/swipe_down': K_Down
+      'keys/@32/swipe_down': K_Down
+      'keys/@33/swipe_down': K_Down
+      'keys/@34/swipe_down': K_Down
+      'keys/@35/swipe_down': K_Down
+      'keys/@36/swipe_down': K_Down
+      'keys/@37/swipe_down': K_Down
+      'keys/@38/swipe_down': K_Down
+      'keys/@39/swipe_down': K_Down
+      'keys/@40/swipe_down': K_Down
+      'keys/@41/swipe_down': K_Down
+      'keys/@42/swipe_down': K_Down
+      'keys/@43/swipe_down': K_Down
+      'keys/@44/swipe_down': K_Down
+      'keys/@45/swipe_down': K_Down
+      'keys/@46/swipe_down': K_Down
+      'keys/@47/swipe_down': K_Down
+      'keys/@48/swipe_down': K_Down
+      'keys/@49/swipe_down': K_Down
+      'keys/@0/swipe_up':  K_Up
+      'keys/@1/swipe_up':  K_Up
+      'keys/@2/swipe_up':  K_Up
+      'keys/@3/swipe_up':  K_Up
+      'keys/@4/swipe_up':  K_Up
+      'keys/@5/swipe_up':  K_Up
+      'keys/@6/swipe_up':  K_Up
+      'keys/@7/swipe_up':  K_Up
+      'keys/@8/swipe_up':  K_Up
+      'keys/@9/swipe_up':  K_Up
+      'keys/@10/swipe_up': K_Up
+      'keys/@11/swipe_up': K_Up
+      'keys/@12/swipe_up': K_Up
+      'keys/@13/swipe_up': K_Up
+      'keys/@14/swipe_up': K_Up
+      'keys/@15/swipe_up': K_Up
+      'keys/@16/swipe_up': K_Up
+      'keys/@17/swipe_up': K_Up
+      'keys/@18/swipe_up': K_Up
+      'keys/@19/swipe_up': K_Up
+      'keys/@20/swipe_up': K_Up
+      'keys/@21/swipe_up': K_Up
+      'keys/@22/swipe_up': K_Up
+      'keys/@23/swipe_up': K_Up
+      'keys/@24/swipe_up': K_Up
+      'keys/@25/swipe_up': K_Up
+      'keys/@26/swipe_up': K_Up
+      'keys/@27/swipe_up': K_Up
+      'keys/@28/swipe_up': K_Up
+      'keys/@29/swipe_up': K_Up
+      'keys/@30/swipe_up': K_Up
+      'keys/@31/swipe_up': K_Up
+      'keys/@32/swipe_up': K_Up
+      'keys/@33/swipe_up': K_Up
+      'keys/@34/swipe_up': K_Up
+      'keys/@35/swipe_up': K_Up
+      'keys/@36/swipe_up': K_Up
+      'keys/@37/swipe_up': K_Up
+      'keys/@38/swipe_up': K_Up
+      'keys/@39/swipe_up': K_Up
+      'keys/@40/swipe_up': K_Up
+      'keys/@41/swipe_up': K_Up
+      'keys/@42/swipe_up': K_Up
+      'keys/@43/swipe_up': K_Up
+      'keys/@44/swipe_up': K_Up
+      'keys/@45/swipe_up': K_Up
+      'keys/@46/swipe_up': K_Up
+      'keys/@47/swipe_up': K_Up
+      'keys/@48/swipe_up': K_Up
+      'keys/@49/swipe_up': K_Up
       
   0plsudm: &kpl_swipe_ud_m
       'keys/@0/swipe_down':  KB_Letter_NRT
@@ -844,6 +944,34 @@ preset_keys:
   
   K_Nothing: { label: ' ' }
 
+  # 蒼頡
+  K_Hint_Cangjie6_q: { label: '​手' ,text: 'q' ,preview: 'q' } 
+  K_Hint_Cangjie6_w: { label: '​田' ,text: 'w' ,preview: 'w' } 
+  K_Hint_Cangjie6_e: { label: '​水' ,text: 'e' ,preview: 'e' } 
+  K_Hint_Cangjie6_r: { label: '​口' ,text: 'r' ,preview: 'r' } 
+  K_Hint_Cangjie6_t: { label: '​廿' ,text: 't' ,preview: 't' } 
+  K_Hint_Cangjie6_y: { label: '​卜' ,text: 'y' ,preview: 'y' } 
+  K_Hint_Cangjie6_u: { label: '​山' ,text: 'u' ,preview: 'u' } 
+  K_Hint_Cangjie6_i: { label: '​戈' ,text: 'i' ,preview: 'i' } 
+  K_Hint_Cangjie6_o: { label: '​人' ,text: 'o' ,preview: 'o' } 
+  K_Hint_Cangjie6_p: { label: '​心' ,text: 'p' ,preview: 'p' } 
+  K_Hint_Cangjie6_a: { label: '​日' ,text: 'a' ,preview: 'a' } 
+  K_Hint_Cangjie6_s: { label: '​尸' ,text: 's' ,preview: 's' } 
+  K_Hint_Cangjie6_d: { label: '​木' ,text: 'd' ,preview: 'd' } 
+  K_Hint_Cangjie6_f: { label: '火' ,text: 'f' ,preview: 'f' } 
+  K_Hint_Cangjie6_g: { label: '​土' ,text: 'g' ,preview: 'g' } 
+  K_Hint_Cangjie6_h: { label: '​的' ,text: 'h' ,preview: 'h' } 
+  K_Hint_Cangjie6_j: { label: '​十' ,text: 'j' ,preview: 'j' } 
+  K_Hint_Cangjie6_k: { label: '​大' ,text: 'k' ,preview: 'k' } 
+  K_Hint_Cangjie6_l: { label: '​中' ,text: 'l' ,preview: 'l' } 
+  K_Hint_Cangjie6_z: { label: '​片' ,text: 'z' ,preview: 'z' } 
+  K_Hint_Cangjie6_x: { label: '​止' ,text: 'x' ,preview: 'x' } 
+  K_Hint_Cangjie6_c: { label: '​金' ,text: 'c' ,preview: 'c' } 
+  K_Hint_Cangjie6_v: { label: '​女' ,text: 'v' ,preview: 'v' } 
+  K_Hint_Cangjie6_b: { label: '​月' ,text: 'b' ,preview: 'b' } 
+  K_Hint_Cangjie6_n: { label: '​弓' ,text: 'n' ,preview: 'n' } 
+  K_Hint_Cangjie6_m: { label: '​一' ,text: 'm' ,preview: 'm' } 
+
   # 組合鍵 / Hotkeys
   HK_SelectAll: { send: Control+a                ,label: '⧈'      }
   HK_Cut:       { send: Control+x                ,label: '⎘'     }
@@ -871,8 +999,7 @@ preset_keys:
   KB_Letter:    { send: Eisu_toggle ,select: default  ,label: 字母 ,preview: ' ' }
   KB_Letter_S:  { send: Eisu_toggle ,select: default  ,label: ABC  }
   KB_Letter_NRT: { send: Eisu_toggle ,select: letter_NRT ,label: 字母頂數字行 ,preview: ' ' }
-  KB_Letter_CRB: { send: Eisu_toggle ,select: letter_CRB ,label: 字母底控制行 ,preview: ' ' }
- 
+  KB_Letter_CRB: { send: Eisu_toggle ,select: letter_CRB ,label: 字母底控制行 ,preview: ' ' } 
  
   KB_Number:    { send: Eisu_toggle ,select: number   ,label: 數字  }
   KB_Number_S:  { send: Eisu_toggle ,select: number   ,label: "123" }
@@ -926,14 +1053,24 @@ keybase:
   lr1:
     click: 'x'
     key_back_color: CLB_H1
+    key_text_size: 15.5
     hilited_key_back_color: CHB_H1
     key_text_color: CLT_H1
+    swipe_down: KB_Letter_NRT
+    swipe_up: KB_Letter_CRB
   lr2:
     __include: keybase/lr1
   lr3:
     __include: keybase/lr1
   lr4:
     __include: keybase/lr1
+    key_back_color: 0x10808080
+  larr:
+    click: ''
+    #key_back_color: 0x00000000
+    hilited_key_back_color: 0x00000000
+    key_text_color: CLT_H1
+    round_corner: 50
   lkbs:
     click: K_Backspace
     key_back_color: CLB_BS
@@ -944,12 +1081,14 @@ keybase:
     key_back_color: CLB_FN
     hilited_key_back_color: CHB_FN
     key_text_color: CLT_FN
+    round_corner: 32
   lket:
     click: K_Enter
     long_click: HK_CtrlShiftEnter
     key_back_color: CLB_ET
     hilited_key_back_color: CHB_ET
     key_text_color: CLT_ET
+    round_corner: 32
   lksp:
     click: K_Space_NoPreview
     long_click: F_Menu_F_Slash
@@ -982,7 +1121,7 @@ keyboard_components:
     # ascii_keyboard: ""
     # lock: false
     # columns: -1 # 超過則換行，整數，預設30，設為-1即無限
-    width: 10 # 單位屏幕寬度百分比
+    #width: 10 # 單位屏幕寬度百分比
     # height: 44 # 單位像素px
     # horizontal_gap: 
     # vertical_gap:
@@ -991,6 +1130,19 @@ keyboard_components:
     # key_press_offset_x: 2 #按下時偏移，會叠加於symbol、text和hint，預設0
     # key_press_offset_y: 2
     #key_symbol_offset_x: 3
+    key_symbol_offset_y: -2
+    # key_text_offset_x: 0
+    key_text_offset_y: 0
+    #key_hint_offset_x: -3
+    key_hint_offset_y: 1
+    
+    keys: []
+
+  0dbz: &kb_default_base_zip
+    author: "Baopaau"  
+    reset_ascii_mode: false
+    ascii_mode: 0
+    height: 40 # 單位像素px?
     key_symbol_offset_y: -2
     # key_text_offset_x: 0
     key_text_offset_y: -1
@@ -1030,7 +1182,7 @@ keyboard_components:
     - { width: 4.9  ,click: "'" ,long_click: '"' ,key_back_color: 0x00000000 }
     - { width: 0.7  ,click: "'" ,long_click: '"' ,key_back_color: 0x00000000 ,key_text_color: 0x00000000 ,key_symbol_color: 0x00000000 }
 
-    - { width:  100 ,height: *H_GAP }
+    - { width: 100 ,height: *H_GAP }
 
     - { width: 1.3 }
     - { width: 12.7 ,click: K_Shift ,send_bindings: false ,key_text_size: 24 }
@@ -1062,8 +1214,7 @@ keyboard_components:
     - { width: 0.7 }
   
   0lmm: &kb_letter_middle_mod
-    'keys/@last/key_back_color':  0xff808080
-    
+    'keys/@last/key_back_color':  0xff808080    
     
   0lt: &kb_letter_top
     0hbar: &H_BAR 1.2
@@ -1114,9 +1265,9 @@ keyboard_components:
     - { width: 100 ,height: 2 }
     
 
-    - { width: 25 ,height: *H_BAR }
-    - { width: 50 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x18808080 }
-    - { width: 25 ,height: *H_BAR }
+    - { width: 35 ,height: *H_BAR }
+    - { width: 30 ,height: *H_BAR ,click: K_Nothing ,key_back_color: 0x18808080 }
+    - { width: 35 ,height: *H_BAR }
 
     
     - { width: 100 ,height: 4 }
@@ -1134,18 +1285,26 @@ keyboard_components:
     - { width: 100 ,height: *H_GAP }
     
   0lcrbb: &kb_letter_crb_bottom_extra
-    0hcrb: &H_CRB 28
+    0hcrb: &H_CRB 36
+    0hcrbc: &H_CRBC 36
     keys/+:
+    - { width: 40   ,height: *H_CRB }
+    - { width: 20   ,height: *H_CRB ,__include: keybase/larr ,click: K_Up_R }
+    - { width: 40   ,height: *H_CRB }
 
-    - { width: 25   ,height: *H_CRB }
-    - { width: 12.5 ,height: *H_CRB ,click: K_Left_R  ,key_back_color: 0x10808080 }
-    - { width: 12.5 ,height: *H_CRB ,click: K_Down_R  ,key_back_color: 0x10808080 }
-    - { width: 12.5 ,height: *H_CRB ,click: K_Up_R    ,key_back_color: 0x10808080 }
-    - { width: 12.5 ,height: *H_CRB ,click: K_Right_R ,key_back_color: 0x10808080 }
-    - { width: 25   ,height: *H_CRB }
+    - { width: 20   ,height: *H_CRBC }
+    - { width: 20   ,height: *H_CRBC ,__include: keybase/larr ,click: K_Left_R }
+    - { width: 20   ,height: *H_CRBC }
+    - { width: 20   ,height: *H_CRBC ,__include: keybase/larr ,click: K_Right_R }
+    - { width: 20   ,height: *H_CRBC }
 
+
+    - { width: 40   ,height: *H_CRB }
+    - { width: 20   ,height: *H_CRB ,__include: keybase/larr ,click: K_Down_R }
+    - { width: 40   ,height: *H_CRB }
     
     - { width: 100 ,height: *H_GAP }
+
     
   0nm: &kb_number_middle
     keys/+:
@@ -1200,10 +1359,57 @@ keyboard_components:
     - { width: 1.25 }
     - { __include: keybase/lket  ,width: 24 ,key_text_size: 20 ,key_text_offset_y: 2 }
 
+    
+  0lm_cangjie6: &kb_letter_middle_cangjie6
+    keys/+:
+    - { width: 1.3 }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'q' ,click: K_Hint_Cangjie6_q ,long_click: K_Tab }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'w' ,click: K_Hint_Cangjie6_w ,long_click: '+' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'e' ,click: K_Hint_Cangjie6_e ,long_click: '=' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'r' ,click: K_Hint_Cangjie6_r ,long_click: '{' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 't' ,click: K_Hint_Cangjie6_t ,long_click: '}' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'y' ,click: K_Hint_Cangjie6_y ,long_click: HK_Redo }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'u' ,click: K_Hint_Cangjie6_u ,long_click: '<' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'i' ,click: K_Hint_Cangjie6_i ,long_click: '>' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'o' ,click: K_Hint_Cangjie6_o ,long_click: '[' }
+    - { width: 9.8 ,__include: keybase/lr1 ,hint: 'p' ,click: K_Hint_Cangjie6_p ,long_click: ']' }
+    - { width: 0.7 }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { width: 1.3 ,click: ':' ,long_click: ';' ,key_back_color: 0x00000000 ,key_text_color: 0x00000000 ,key_symbol_color: 0x00000000 }
+    - { width: 4.9 ,click: ':' ,long_click: ';' ,key_back_color: 0x00000000 }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'a' ,click: K_Hint_Cangjie6_a ,long_click: HK_SelectAll }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 's' ,click: K_Hint_Cangjie6_s ,long_click: HK_SelectWord }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'd' ,click: K_Hint_Cangjie6_d ,long_click: '`' }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'f' ,click: K_Hint_Cangjie6_f }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'g' ,click: K_Hint_Cangjie6_g }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'h' ,click: K_Hint_Cangjie6_h }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'j' ,click: K_Hint_Cangjie6_j ,long_click: '~' }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'k' ,click: K_Hint_Cangjie6_k ,long_click: '!' }
+    - { width: 9.8 ,__include: keybase/lr2 ,hint: 'l' ,click: K_Hint_Cangjie6_l ,long_click: '?' }
+    - { width: 4.9  ,click: "'" ,long_click: '"' ,key_back_color: 0x00000000 }
+    - { width: 0.7  ,click: "'" ,long_click: '"' ,key_back_color: 0x00000000 ,key_text_color: 0x00000000 ,key_symbol_color: 0x00000000 }
+
+    - { width: 100 ,height: *H_GAP }
+
+    - { width: 1.3 }
+    - { width: 12.7 ,click: K_Shift ,send_bindings: false ,key_text_size: 24 }
+    - { width: 2 }
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'z' ,click: K_Hint_Cangjie6_z ,long_click: HK_Undo }
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'x' ,click: K_Hint_Cangjie6_x ,long_click: HK_Cut }
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'c' ,click: K_Hint_Cangjie6_c ,long_click: HK_Copy }
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'v' ,click: K_Hint_Cangjie6_v ,long_click: HK_Paste }
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'b' ,click: K_Hint_Cangjie6_b ,long_click: '|'}
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'n' ,click: K_Hint_Cangjie6_n ,long_click: '\' }
+    - { width: 9.8 ,__include: keybase/lr3 ,hint: 'm' ,click: K_Hint_Cangjie6_m ,long_click: '/' }
+    - { width: 2 }
+    - { width: 12.7 ,__include: keybase/lkbs ,key_text_size: 22 }
+    - { width: 0.7 }
       
 preset_keyboards:
   default:
-    __include: /preset_keyboards/letter
+    __include: /preset_keyboards/letter_NRT_cangjie6
     lock: true
     
   letter:
@@ -1216,7 +1422,6 @@ preset_keyboards:
     #- *kb_letter_middle_mod
     - *kb_letter_bottom
     - *kpl_swipe_lr
-    - *kpl_swipe_ud_m
       
   letter_NRT:
     name: 主鍵盤 —— 頂部數字行
@@ -1227,19 +1432,27 @@ preset_keyboards:
     - *kb_letter_middle_b
     - *kb_letter_nrt_bottom
     - *kpl_swipe_lr
-    - *kpl_swipe_ud_t
+
+  letter_NRT_cangjie6:
+    name: 主鍵盤（蒼頡） —— 頂部數字行
+    __patch:
+    - *kb_default_base
+    - *kb_letter_nrt_top
+    - *kb_letter_middle_cangjie6
+    - *kb_letter_middle_b
+    - *kb_letter_nrt_bottom
+    - *kpl_swipe_lr
          
   letter_CRB:
     name: 主鍵盤 —— 底部控制行
     __patch:
-    - *kb_default_base
+    - *kb_default_base_zip
     - *kb_letter_crb_top
     - *kb_letter_middle
     - *kb_letter_middle_b
     - *kb_letter_bottom
     - *kb_letter_crb_bottom_extra
-    - *kpl_swipe_lr
-    - *kpl_swipe_ud_b 
+    - *kpl_swipe_lr 
         
   number:
     name: 副鍵盤：數字頁
@@ -1382,36 +1595,5 @@ preset_keyboards:
     __include: /preset_keyboards/default
   qwerty:
     __include: /preset_keyboards/default
-  
-  qwerty__:
-    __include: /preset_keyboards/default
-    __patch:
-      keys/@5/hint: 手
-      keys/@6/hint: 田
-      keys/@7/hint: 水
-      keys/@8/hint: 口
-      keys/@9/hint: 廿
-      keys/@10/hint: 卜
-      keys/@11/hint: 山
-      keys/@12/hint: 戈
-      keys/@13/hint: 人
-      keys/@14/hint: 心
-        
-      keys/@17/hint: 日
-      keys/@18/hint: 尸
-      keys/@19/hint: 木
-      keys/@20/hint: 火
-      keys/@21/hint: 土
-      keys/@22/hint: 的
-      keys/@23/hint: 十
-      keys/@24/hint: 大
-      keys/@25/hint: 中
-        
-      keys/@30/hint: 片
-      keys/@31/hint: 止
-      keys/@32/hint: 金
-      keys/@33/hint: 女
-      keys/@34/hint: 月
-      keys/@35/hint: 弓
-      keys/@36/hint: 一
+
       
